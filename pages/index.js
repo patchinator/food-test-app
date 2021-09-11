@@ -1,5 +1,6 @@
-import Head from "next/head";
 import { Fragment } from "react";
+import Head from "next/head";
+
 import style from "../styles/Home.module.css";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <meta name="description" content="Create your own recipes with ease." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <body className={style.body}>
         <p>Food</p>
         <p>Food</p>
