@@ -1,7 +1,13 @@
-import style from "./Navbar.module.css";
+import { useContext } from "react";
 import Link from "next/link";
 
+import style from "./Navbar.module.css";
+import AuthContext from "../../store/auth-context";
+
 const Navbar = () => {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+
   return (
     <header className={style.navbar}>
       <div className={style.logo}>
@@ -17,12 +23,21 @@ const Navbar = () => {
           <li>
             <Link href="/">Create Recipe</Link>
           </li>
-          <li>
-            <Link href="/">Profile</Link>
-          </li>
-          <li>
-            <Link href="/auth/log-in">Login</Link>
-          </li>
+          {isLoggedIn && (
+            <li>
+              <Link href="/">Profile</Link>
+            </li>
+          )}
+          {!isLoggedIn && (
+            <li>
+              <Link href="/auth/log-in">Login</Link>
+            </li>
+          )}
+          {isLoggedIn && (
+            <li>
+              <Link href="/auth/log-in">Logout</Link>
+            </li>
+          )}
         </ul>
       </div>
     </header>

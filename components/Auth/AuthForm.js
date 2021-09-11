@@ -1,12 +1,16 @@
-import { useState, useRef } from "react";
-import style from "./AuthForm.module.css";
+import { useState, useRef, useContext } from "react";
+
+import AuthContext from "../../store/auth-context";
 import Link from "next/link";
+import style from "./AuthForm.module.css";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const enteredEmailRef = useRef();
   const enteredPasswordRef = useRef();
+
+  const authCtx = useContext(AuthContext);
 
   const authModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -59,7 +63,8 @@ const AuthForm = () => {
       })
       .then((data) => {
         // successful request
-        console.log(data);
+        authCtx.login(data.idToken);
+        // data.idToken is token recieved from firebase
       })
       .catch((error) => {
         alert(error.message);
