@@ -28,7 +28,20 @@ const ProfileForm = () => {
           "Content-Type": "application/json",
         },
       }
-    )
+    ).then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        return res.json().then((data) => {
+          let errorMessage = "Update password failed.";
+          if (data && data.error && data.error.message) {
+            errorMessage = data.error.message;
+          }
+          // TODO create error modal
+          throw new Error(errorMessage);
+        });
+      }
+    });
   };
 
   return (
@@ -37,7 +50,12 @@ const ProfileForm = () => {
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="new-password">Change Password</label>
-          <input type="password" id="new-password" minLength="6" ref={updatedPasswordRef} />
+          <input
+            type="password"
+            id="new-password"
+            minLength="6"
+            ref={updatedPasswordRef}
+          />
         </div>
         <div>
           <button>Submit</button>

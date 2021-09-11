@@ -25,7 +25,7 @@ const Navbar = () => {
           </li>
           {isLoggedIn && (
             <li>
-              <Link href="/">Profile</Link>
+              <Link href="/profile/update-password">Profile</Link>
             </li>
           )}
           {!isLoggedIn && (
