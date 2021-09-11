@@ -63,8 +63,8 @@ const AuthForm = () => {
       })
       .then((data) => {
         // successful request
-        authCtx.login(data.idToken);
-        // data.idToken is token recieved from firebase
+        authCtx.login(data.idToken)
+        // data.idToken is token recieved from firebase, pass it
       })
       .catch((error) => {
         alert(error.message);
