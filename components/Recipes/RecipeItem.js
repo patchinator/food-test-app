@@ -1,18 +1,18 @@
-import Image from 'next/image';
+import style from './RecipeItem.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 const RecipeItem = (props) => {
   return (
-    <ul>
-      <div>
+    <ul className={style.recipe_card}>
+      <div className={style.recipe_card_header}>
         <h4>{props.title}</h4>
-        <p>{props.difficulty}</p>
+        <p></p>
       </div>
       <div>
+        <div className={style.time}>
+          <div>{props.time} mins</div>
+        </div>
         <img src={props.image} alt={props.title} />
-        <p>{props.time}</p>
-      </div>
-      <div>
-        <p>{props.description}</p>
       </div>
     </ul>
   );

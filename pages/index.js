@@ -12,12 +12,6 @@ export default function Home() {
         <meta name="description" content="Create your own recipes with ease." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className={style.body}>
-        <p>Food</p>
-        <p>Food</p>
-        <p>Food</p>
-      </div>
       <Recipes />
     </Fragment>
   );

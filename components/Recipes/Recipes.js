@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import RecipeItem from "./RecipeItem";
+import style from './Recipes.module.css';
 
 const Recipes = () => {
   const [library, setLibrary] = useState([]);
@@ -16,7 +17,7 @@ const Recipes = () => {
             title: data[key].title,
             image: data[key].image,
             difficulty: data[key].difficulty,
-            time: data[key].enteredTime,
+            time: data[key].time,
             description: data[key].description,
             id: key,
           });
@@ -27,16 +28,16 @@ const Recipes = () => {
   }, []);
 
   return (
-    <ul>
+    <ul className={style.layout}>
       {library.map((recipe) => (
         <RecipeItem
           key={recipe.id}
           id={recipe.id}
           title={recipe.title}
-          descsription={recipe.description}
+          description={recipe.description}
           image={recipe.image}
           difficulty={recipe.difficulty}
-          time={recipe.enteredTime}
+          time={recipe.time}
         />
       ))}
     </ul>
