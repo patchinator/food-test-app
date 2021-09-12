@@ -18,7 +18,6 @@ export default function Home() {
         <p>Food</p>
         <p>Food</p>
       </div>
-      <RecipeForm />
     </Fragment>
   );
 }

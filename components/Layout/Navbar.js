@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link href="/">Recipes</Link>
           </li>
           <li>
-            <Link href="/">Create Recipe</Link>
+            <Link href="/profile/create-recipe">Create Recipe</Link>
           </li>
           {isLoggedIn && (
             <li>
