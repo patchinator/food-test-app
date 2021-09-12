@@ -17,13 +17,27 @@ const RecipeForm = (props) => {
     const enteredImage = imageInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
 
-    const recipeData = {
-      title: enteredTitle,
-      difficulty: enteredDifficulty,
-      time: enteredTime,
-      image: enteredImage,
-      description: enteredDescription,
-    };
+    fetch(
+      "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          title: enteredTitle,
+          difficulty: enteredDifficulty,
+          time: enteredTime,
+          image: enteredImage,
+          description: enteredDescription,
+        }),
+      }
+    );
+
+    // const recipeData = {
+    //   title: enteredTitle,
+    //   difficulty: enteredDifficulty,
+    //   time: enteredTime,
+    //   image: enteredImage,
+    //   description: enteredDescription,
+    // };
   };
 
   return (
@@ -34,11 +48,11 @@ const RecipeForm = (props) => {
           <div className={style.column}>
             <div className={style.form_layout}>
               <label htmlFor="title">Title</label>
-              <input id="title" type="text"></input>
+              <input id="title" type="text" ref={titleInputRef}></input>
             </div>
             <div className={style.form_components}>
               <label htmlFor="difficulty">Difficulty</label>
-              <select name="difficulty" id="difficulty">
+              <select name="difficulty" id="difficulty" ref={difficultyInputRef}>
                 <option value="easy">Easy</option>
                 <option value="moderate">Moderate</option>
                 <option value="challenging">Challenging</option>
@@ -48,11 +62,11 @@ const RecipeForm = (props) => {
           <div className={style.column}>
             <div className={style.form_components}>
               <label htmlFor="prepTime">Preparation Time (mins)</label>
-              <input id="prepTime" type="number"></input>
+              <input id="prepTime" type="number" ref={prepTimeInputRef}></input>
             </div>
             <div className={style.form_components}>
               <label htmlFor="image">Image</label>
-              <input id="image" type="url"></input>
+              <input id="image" type="url" ref={imageInputRef}></input>
             </div>
           </div>
         </div>
@@ -63,6 +77,7 @@ const RecipeForm = (props) => {
             id="description"
             cols="30"
             rows="15"
+            ref={descriptionInputRef}
           ></textarea>
         </div>
         <div className={style.form_buttons}>
