@@ -3,12 +3,14 @@ import { useState, useRef, useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import Link from "next/link";
 import style from "./AuthForm.module.css";
+import { useRouter } from "next/router";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const enteredEmailRef = useRef();
   const enteredPasswordRef = useRef();
+  const router = useRouter();
 
   const authCtx = useContext(AuthContext);
 
@@ -65,6 +67,8 @@ const AuthForm = () => {
         // successful request
         authCtx.login(data.idToken)
         // data.idToken is token recieved from firebase, pass it
+        router.push('/')
+        // push user to homepage on login success
       })
       .catch((error) => {
         alert(error.message);

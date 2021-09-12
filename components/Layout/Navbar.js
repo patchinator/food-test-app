@@ -7,6 +7,9 @@ import AuthContext from "../../store/auth-context";
 const Navbar = () => {
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
+  const logoutHandler = () => {
+    authCtx.logout();
+  };
 
   return (
     <header className={style.navbar}>
@@ -35,7 +38,7 @@ const Navbar = () => {
           )}
           {isLoggedIn && (
             <li>
-              <Link href="/auth/log-in">Logout</Link>
+              <button onClick={logoutHandler}>Logout</button>
             </li>
           )}
         </ul>
