@@ -30,14 +30,6 @@ const RecipeForm = (props) => {
         }),
       }
     );
-
-    // const recipeData = {
-    //   title: enteredTitle,
-    //   difficulty: enteredDifficulty,
-    //   time: enteredTime,
-    //   image: enteredImage,
-    //   description: enteredDescription,
-    // };
   };
 
   return (
