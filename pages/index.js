@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 
 import style from "../styles/Home.module.css";
+import RecipeForm from "../components/Recipes/RecipeForm";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <p>Food</p>
         <p>Food</p>
       </body>
+      <RecipeForm />
     </Fragment>
   );
 }
