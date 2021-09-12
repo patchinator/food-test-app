@@ -1,6 +1,7 @@
 .recipe_card {
   background: greenyellow;
   width: 25%;
+  height: 16.5rem;
   margin: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   list-style: none;
@@ -29,4 +30,8 @@
   padding: 4px;
   margin: 8px;
   border-radius: 8px;
+}
+
+.difficulty {
+
 }

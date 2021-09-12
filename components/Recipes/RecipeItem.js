@@ -1,12 +1,13 @@
-import style from './RecipeItem.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import style from "./RecipeItem.module.css";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const RecipeItem = (props) => {
   return (
     <ul className={style.recipe_card}>
       <div className={style.recipe_card_header}>
         <h4>{props.title}</h4>
-        <p></p>
+        <p>{props.difficulty}</p>
       </div>
       <div>
         <div className={style.time}>
