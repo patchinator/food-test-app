@@ -1,10 +1,35 @@
 import style from "./RecipeForm.module.css";
+import { useRef } from "react";
 
-const RecipeForm = () => {
+const RecipeForm = (props) => {
+  const titleInputRef = useRef();
+  const difficultyInputRef = useRef();
+  const prepTimeInputRef = useRef();
+  const imageInputRef = useRef();
+  const descriptionInputRef = useRef();
+
+  const submitRecipeHandler = (event) => {
+    event.preventDefault();
+
+    const enteredTitle = titleInputRef.current.value;
+    const enteredDifficulty = difficultyInputRef.current.value;
+    const enteredTime = prepTimeInputRef.current.value;
+    const enteredImage = imageInputRef.current.value;
+    const enteredDescription = descriptionInputRef.current.value;
+
+    const recipeData = {
+      title: enteredTitle,
+      difficulty: enteredDifficulty,
+      time: enteredTime,
+      image: enteredImage,
+      description: enteredDescription,
+    };
+  };
+
   return (
     <div>
       <h1 className={style.form_header}>Create new Recipe</h1>
-      <form className={style.form}>
+      <form onSubmit={submitRecipeHandler} className={style.form}>
         <div className={style.row}>
           <div className={style.column}>
             <div className={style.form_layout}>

@@ -13,11 +13,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <body className={style.body}>
+      <div className={style.body}>
         <p>Food</p>
         <p>Food</p>
         <p>Food</p>
-      </body>
+      </div>
       <RecipeForm />
     </Fragment>
   );
