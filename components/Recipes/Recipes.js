@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import RecipeItem from "./RecipeItem";
-import style from './Recipes.module.css';
+import style from "./Recipes.module.css";
 
 const Recipes = () => {
   const [library, setLibrary] = useState([]);
+  const [librarySize, setLibrarySize] = useState(4);
+
+  const showMoreRecipesHandler = () => {
+    const newSize = librarySize + 4;
+    setLibrarySize(newSize);
+  };
 
   useEffect(() => {
     fetch(
@@ -28,19 +34,24 @@ const Recipes = () => {
   }, []);
 
   return (
-    <ul className={style.layout}>
-      {library.map((recipe) => (
-        <RecipeItem
-          key={recipe.id}
-          id={recipe.id}
-          title={recipe.title}
-          description={recipe.description}
-          image={recipe.image}
-          difficulty={recipe.difficulty}
-          time={recipe.time}
-        />
-      ))}
-    </ul>
+    <Fragment>
+      <ul className={style.layout}>
+        {library.slice(0, librarySize).map((recipe) => (
+          <RecipeItem
+            key={recipe.id}
+            id={recipe.id}
+            title={recipe.title}
+            description={recipe.description}
+            image={recipe.image}
+            difficulty={recipe.difficulty}
+            time={recipe.time}
+          />
+        ))}
+      </ul>
+      <div className={style.button}>
+        <button onClick={showMoreRecipesHandler}>Show more</button>
+      </div>
+    </Fragment>
   );
 };
 
