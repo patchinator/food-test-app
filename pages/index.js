@@ -2,6 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 import Head from "next/head";
 import Recipes from "../components/Recipes/Recipes";
 import HomepageHead from "../components/Layout/HomepageHead";
+import Footer from "../components/Layout/Footer";
 
 export default function Home() {
   const [library, setLibrary] = useState([]);
@@ -47,6 +48,7 @@ export default function Home() {
         library={library}
         onRefresh={refreshLibraryHandler}
       />
+      <Footer />
     </Fragment>
   );
 }
