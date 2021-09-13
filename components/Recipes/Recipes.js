@@ -3,12 +3,12 @@ import { Fragment, useEffect, useState } from "react";
 import RecipeItem from "./RecipeItem";
 import style from "./Recipes.module.css";
 
-const Recipes = () => {
+const Recipes = (props) => {
   const [library, setLibrary] = useState([]);
-  const [librarySize, setLibrarySize] = useState(4);
+  const [librarySize, setLibrarySize] = useState(12);
 
   const showMoreRecipesHandler = () => {
-    const newSize = librarySize + 4;
+    const newSize = librarySize + 8;
     setLibrarySize(newSize);
   };
 
@@ -45,6 +45,7 @@ const Recipes = () => {
             image={recipe.image}
             difficulty={recipe.difficulty}
             time={recipe.time}
+            onDeleteRecipe={props.onRemoveRecipe}
           />
         ))}
       </ul>

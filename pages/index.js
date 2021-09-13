@@ -3,6 +3,10 @@ import Head from "next/head";
 import Recipes from "../components/Recipes/Recipes";
 import HomepageHead from "../components/Layout/HomepageHead";
 
+  const removeRecipeHandler = () => {
+    setLibrary(library.filter((recipe) => recipe.id != id));
+  };
+
 export default function Home() {
   return (
     <Fragment>
@@ -12,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomepageHead />
-      <Recipes />
+      <Recipes onRemoveRecipe={removeRecipeHandler}/>
     </Fragment>
   );
 }

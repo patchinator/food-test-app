@@ -95,10 +95,12 @@
   left: 33%;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 4;
 }
 
 .image {
   object-fit: cover;
+  z-index: 3;
 }
 
 .divider {

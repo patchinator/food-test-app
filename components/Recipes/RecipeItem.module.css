@@ -31,3 +31,14 @@
   margin: 8px;
   border-radius: 8px;
 }
+
+.remove {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.remove button {
+  cursor: pointer;
+}
