@@ -1,5 +1,5 @@
 import style from "./RecipeItem.module.css";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { toast } from "react-toastify";
@@ -40,7 +40,9 @@ const RecipeItem = (props) => {
           <div>{props.time} mins</div>
         </div>
         <div className={style.remove}>
-          <button onClick={deleteMovieHandler}>Remove</button>
+          <button onClick={deleteMovieHandler}>
+            <FontAwesomeIcon icon={faTrash}/>
+          </button>
         </div>
         <img src={props.image} alt={props.title} />
       </div>

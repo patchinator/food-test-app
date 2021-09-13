@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+.recipe_card h4 {
+  flex-grow: 1;
+}
+
 .recipe_card_header {
   display: flex;
   align-items: center;
@@ -14,6 +18,8 @@
   padding: 0 0.5rem 0 0.5rem;
   height: 2.5rem;
 }
+
+
 
 .recipe_card img {
   width: 100%;
@@ -41,4 +47,19 @@
 
 .remove button {
   cursor: pointer;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove button:hover,
+.remove button:active {
+  background: rgba(202, 255, 129, 0.5);
+  border: rgba(202, 255, 129, 0.5);
 }
