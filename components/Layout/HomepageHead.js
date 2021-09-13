@@ -2,6 +2,7 @@ import image from "../../components/Assets/header-image.jpg";
 import Image from "next/image";
 import { Fragment } from "react";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 import style from "./HomepageHead.module.css";
 
@@ -14,7 +15,24 @@ const HomepageHead = () => {
           rel="stylesheet"
         ></link>
       </Head>
-      <div className={style.head_card}>
+      <motion.div
+        className={style.head_card}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            scale: 0.8,
+            opacity: 0,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: 0.4,
+            },
+          },
+        }}
+      >
         <div className={style.wrapper}>
           <div className={style.static_text}>I fancy</div>
           <div className={style.text_box}>
@@ -34,7 +52,7 @@ const HomepageHead = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className={style.head}>
         <Image className={style.image} src={image} alt="" />
       </div>

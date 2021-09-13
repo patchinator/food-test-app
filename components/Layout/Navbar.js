@@ -15,7 +15,7 @@ const Navbar = () => {
     <header className={style.navbar}>
       <div className={style.logo}>
         <h2>
-          <Link href="/">Food App</Link>
+          <Link href="/">Recipe Library</Link>
         </h2>
       </div>
       <div>
