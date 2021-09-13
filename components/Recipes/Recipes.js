@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import Modal from "../UI/Modal";
 
 import RecipeItem from "./RecipeItem";
 import style from "./Recipes.module.css";
@@ -6,10 +7,10 @@ import style from "./Recipes.module.css";
 const Recipes = (props) => {
   const [librarySize, setLibrarySize] = useState(12);
 
-    const showMoreRecipesHandler = () => {
-      const newSize = librarySize + 8;
-      setLibrarySize(newSize);
-    };
+  const showMoreRecipesHandler = () => {
+    const newSize = librarySize + 8;
+    setLibrarySize(newSize);
+  };
 
   return (
     <Fragment>
@@ -24,6 +25,9 @@ const Recipes = (props) => {
             difficulty={recipe.difficulty}
             time={recipe.time}
             onRefresh={props.onRefresh}
+            onOpenModal={props.onOpenModal}
+            onCloseModal={props.onCloseModal}
+            modal={props.modal}
           />
         ))}
       </ul>

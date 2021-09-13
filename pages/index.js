@@ -7,6 +7,15 @@ import Footer from "../components/Layout/Footer";
 export default function Home() {
   const [library, setLibrary] = useState([]);
   const [refresh, setRefresh] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+
+  const showRecipeModal = () => {
+    setShowModal(true);
+  };
+
+  const hideRecipeModal = () => {
+    setShowModal(false);
+  };
 
   useEffect(() => {
     fetch(
@@ -47,6 +56,9 @@ export default function Home() {
       <Recipes
         library={library}
         onRefresh={refreshLibraryHandler}
+        onOpenModal={showRecipeModal}
+        onCloseModal={hideRecipeModal}
+        modal={showModal}
       />
       <Footer />
     </Fragment>

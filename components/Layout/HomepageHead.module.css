@@ -4,6 +4,7 @@
   height: 32rem;
   overflow: hidden;
   z-index: 0;
+  display: flex;
 }
 
 .head_card {
@@ -13,7 +14,7 @@
   justify-content: center;
   position: absolute;
   bottom: 30vh;
-  right: 60vh;
+  right: 28%;
   z-index: 20;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -92,7 +93,7 @@
   align-items: center;
   position: absolute;
   bottom: -7rem;
-  left: 33%;
+  left: 32%;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 4;

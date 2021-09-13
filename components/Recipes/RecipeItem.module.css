@@ -45,7 +45,15 @@
   z-index: 2;
 }
 
-.remove button {
+.info {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+.remove button,
+.info button {
   cursor: pointer;
   background: #fff;
   background: rgba(255, 255, 255, 0.5);
@@ -60,6 +68,12 @@
 
 .remove button:hover,
 .remove button:active {
+  background: rgba(202, 255, 129, 0.5);
+  border: rgba(202, 255, 129, 0.5);
+}
+
+.info button:hover,
+.info button:active {
   background: rgba(202, 255, 129, 0.5);
   border: rgba(202, 255, 129, 0.5);
 }
