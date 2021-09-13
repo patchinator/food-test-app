@@ -1,7 +1,9 @@
 import style from "./RecipeForm.module.css";
 import { useRef } from "react";
+import { useRouter } from "next/dist/client/router";
 
 const RecipeForm = (props) => {
+  const router = useRouter();
   const titleInputRef = useRef();
   const difficultyInputRef = useRef();
   const prepTimeInputRef = useRef();
@@ -29,7 +31,7 @@ const RecipeForm = (props) => {
           description: enteredDescription,
         }),
       }
-    );
+    ).then(router.push("/"))
   };
 
   return (
