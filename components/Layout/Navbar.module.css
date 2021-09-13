@@ -1,9 +1,10 @@
 .navbar {
-  background: rgb(18, 190, 18);
+  background: rgb(202, 255, 129);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navigation_list {
