@@ -1,15 +1,13 @@
 import style from "./RecipeItem.module.css";
 import { faStar, faTrash, faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import Modal from "../../components/UI/Modal";
-import { useRouter } from "next/dist/client/router";
 
 const RecipeItem = (props) => {
-  const router = useRouter();
   const deleteRecipeHandler = () => {
     fetch(
       `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes/${props.id}.json`,
