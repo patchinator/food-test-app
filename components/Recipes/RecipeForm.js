@@ -1,6 +1,6 @@
 import style from "./RecipeForm.module.css";
 import { useRef } from "react";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/dist/client/router";;
 
 const RecipeForm = (props) => {
   const router = useRouter();
@@ -35,9 +35,10 @@ const RecipeForm = (props) => {
   };
 
   return (
-    <div>
-      <h1 className={style.form_header}>Create new Recipe</h1>
+    <div className={style.create_recipe}>
+      <div className={style.form_gap}></div>
       <form onSubmit={submitRecipeHandler} className={style.form}>
+      <h1 className={style.form_header}>Create new Recipe</h1>
         <div className={style.row}>
           <div className={style.column}>
             <div className={style.form_layout}>

@@ -1,13 +1,27 @@
+.create_recipe {
+  background-image: url("../Assets/create-recipe-image.jpg");
+  background-size: cover;
+  background-size: 100%;
+  padding-bottom: 2rem;
+}
+
 .form {
-  background-color: greenyellow;
+  background-color: rgb(202, 255, 129);
   margin: auto;
-  max-width: 60%;
+  max-width: 50%;
   padding: 1rem;
   font-size: 18px;
+  margin-top: 1rem;
+}
+
+.form_gap {
+  padding-top: 1rem;
 }
 
 .form_header {
   text-align: center;
+  margin: 0;
+  padding-top: 1rem;
 }
 
 .form_layout {
