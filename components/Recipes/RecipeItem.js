@@ -51,6 +51,7 @@ const RecipeItem = (props) => {
             <button onClick={props.onOpenModal}>
               <FontAwesomeIcon icon={faFileAlt} />
             </button>
+            {console.log(props)}
           </div>
           <img src={props.image} alt={props.title} />
         </div>
