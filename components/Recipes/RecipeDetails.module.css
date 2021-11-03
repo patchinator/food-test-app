@@ -1,3 +1,7 @@
+.details {
+  width: 80%;
+}
+
 .description {
   white-space: pre-wrap;
 }
