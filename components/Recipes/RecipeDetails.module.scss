@@ -9,6 +9,7 @@
     .details_header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
 
     .details_image {
@@ -17,8 +18,8 @@
       justify-content: center;
 
       img {
-        width: 600px;
-        height: 500px;
+        width: 720px;
+        height: 540px;
       }
 
       .time {
@@ -28,7 +29,7 @@
         background: rgb(202, 255, 129);
         position: absolute;
         top: 0;
-        left: 13rem;
+        left: 9rem;
       }
     }
 

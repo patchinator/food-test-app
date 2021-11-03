@@ -1,5 +1,7 @@
 import style from "./RecipeDetails.module.scss";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const RecipeDetails = (props) => {
   return (
@@ -7,7 +9,21 @@ const RecipeDetails = (props) => {
       <div className={style.details}>
         <div className={style.details_header}>
           <h1>{props.title}</h1>
-          <p className={style.difficulty}>{props.difficulty}</p>
+
+          {props.difficulty === "easy" && <FontAwesomeIcon icon={faStar} />}
+          {props.difficulty === "moderate" && (
+            <div>
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+            </div>
+          )}
+          {props.difficulty === "challenging" && (
+            <div>
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+            </div>
+          )}
         </div>
         <div className={style.details_image}>
           <img src={props.image} alt={props.title} />
