@@ -15,6 +15,9 @@ const HomepageHead = () => {
           rel="stylesheet"
         ></link>
       </Head>
+      <div className={style.head}>
+        <Image className={style.image} src={image} alt="" objectFit="cover" />
+      </div>
       <motion.div
         className={style.head_card}
         initial="hidden"
@@ -53,9 +56,7 @@ const HomepageHead = () => {
           </div>
         </div>
       </motion.div>
-      <div className={style.head}>
-        <Image className={style.image} src={image} alt="" />
-      </div>
+
       <div className={style.info_card}>
         <div>
           <p>Recipe Library allows you to document your own recipes.</p>
@@ -64,7 +65,6 @@ const HomepageHead = () => {
           <p>Happy Cooking!</p>
         </div>
       </div>
-      <div className={style.divider}></div>
     </Fragment>
   );
 };
