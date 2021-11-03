@@ -24,6 +24,9 @@ const Modal = (props) => {
         <div className={style.modal_buttons}>
           <button onClick={props.onCloseModal}>back</button>
         </div>
+        <button onClick={props.onDeleteRecipe}>
+          
+        </button>
       </div>
     </div>
   );

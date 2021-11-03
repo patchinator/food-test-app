@@ -3,7 +3,6 @@ import { faStar, faTrash, faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useState } from "react";
 
-import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import Modal from "../../components/UI/Modal";
 
@@ -43,15 +42,14 @@ const RecipeItem = (props) => {
             <div>{props.time} mins</div>
           </div>
           <div className={style.remove}>
-            <button onClick={deleteRecipeHandler}>
+            {/* <button onClick={deleteRecipeHandler}>
               <FontAwesomeIcon icon={faTrash} />
             </button>
           </div>
           <div className={style.info}>
             <button onClick={props.onOpenModal}>
               <FontAwesomeIcon icon={faFileAlt} />
-            </button>
-            {console.log(props)}
+            </button> */}
           </div>
           <img src={props.image} alt={props.title} />
         </div>
@@ -63,6 +61,7 @@ const RecipeItem = (props) => {
           time={props.time}
           difficulty={props.difficulty}
           onCloseModal={props.onCloseModal}
+          onDeleteRecipe={deleteRecipeHandler}
         />
       )}
     </Fragment>

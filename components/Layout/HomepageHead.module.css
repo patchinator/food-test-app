@@ -4,19 +4,15 @@
   height: 32rem;
   overflow: hidden;
   z-index: 0;
-  display: flex;
 }
 
 .head_card {
+  margin-top: 2rem;
   font-family: "poppins", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 30vh;
-  right: 28%;
   z-index: 20;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .wrapper {
@@ -24,6 +20,7 @@
   background: rgb(202, 255, 129);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .wrapper .static_text {
@@ -87,23 +84,16 @@
 }
 
 .info_card {
+  margin-top: 2rem;
+  text-align: center;
   background: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: -7rem;
-  left: 32%;
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 4;
 }
 
 .image {
-  object-fit: cover;
   z-index: 3;
-}
-
-.divider {
-  padding: 4rem;
 }

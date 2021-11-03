@@ -3,6 +3,7 @@
   background-size: cover;
   background-size: 100%;
   padding-bottom: 2rem;
+  object-fit: cover;
 }
 
 .form {
