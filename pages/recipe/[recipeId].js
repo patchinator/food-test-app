@@ -1,3 +1,18 @@
+import RecipeDetails from "../../components/Recipes/RecipeDetails";
+
+const Details = (props) => {
+  console.log(props.recipe);
+  return (
+    <RecipeDetails
+      title={props.recipe.title}
+      description={props.recipe.description}
+      difficulty={props.recipe.difficulty}
+      image={props.recipe.image}
+      time={props.recipe.time}
+    />
+  );
+};
+
 export const getStaticPaths = async () => {
   const res = await fetch(
     "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json"
@@ -26,14 +41,6 @@ export const getStaticProps = async (context) => {
   return {
     props: { recipe: data },
   };
-};
-
-const Details = (props) => {
-  return (
-    <div>
-      <h1>{props.recipe.title}</h1>
-    </div>
-  );
 };
 
 export default Details;

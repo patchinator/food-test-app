@@ -1,7 +1,4 @@
 .create_recipe {
-  background-image: url("../Assets/create-recipe-image.jpg");
-  background-size: cover;
-  background-size: 100%;
   padding-bottom: 2rem;
   object-fit: cover;
 }
