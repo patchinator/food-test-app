@@ -1,0 +1,45 @@
+.details_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  .details {
+    width: 60%;
+
+    .details_header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .details_image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 600px;
+        height: 500px;
+      }
+
+      .time {
+        border-radius: 2rem;
+        font-size: 20px;
+        padding: 1rem 2rem 1rem 2rem;
+        background: rgb(202, 255, 129);
+        position: absolute;
+        top: 0;
+        left: 13rem;
+      }
+    }
+
+    .description {
+      white-space: pre-wrap;
+    }
+
+    .details_footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+    }
+  }
+}
