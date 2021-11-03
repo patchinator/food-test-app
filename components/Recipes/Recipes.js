@@ -19,7 +19,7 @@ const Recipes = (props) => {
           <Link
             key={recipe.id}
             href={"/recipe/[recipeId]"}
-            as={`/recipe/${props.id}`}
+            as={`/recipe/${recipe.id}`}
             passHref
           >
             <a>
@@ -35,7 +35,6 @@ const Recipes = (props) => {
             </a>
           </Link>
         ))}
-        {console.log(props.library)}
       </ul>
       <div className={style.button}>
         <button onClick={showMoreRecipesHandler}>Show more</button>
