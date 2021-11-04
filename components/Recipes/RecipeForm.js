@@ -1,17 +1,24 @@
-import style from "./RecipeForm.module.css";
+import style from "./RecipeForm.module.scss";
 import { useRef, useContext } from "react";
 import { useRouter } from "next/dist/client/router";
 import AuthContext from "../../store/auth-context";
 
 const RecipeForm = (props) => {
   const router = useRouter();
+  const authCtx = useContext(AuthContext);
+
+  // refs
   const titleInputRef = useRef();
   const difficultyInputRef = useRef();
   const prepTimeInputRef = useRef();
   const imageInputRef = useRef();
   const descriptionInputRef = useRef();
   const ingredientsInputRef = useRef();
-  const authCtx = useContext(AuthContext);
+
+  const vegeterianInputRef = useRef();
+  const servesInputRef = useRef();
+  const courseInputRef = useRef();
+  const notesInputRef = useRef();
 
   const submitRecipeHandler = (event) => {
     event.preventDefault();
@@ -22,6 +29,11 @@ const RecipeForm = (props) => {
     const enteredImage = imageInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
     const enteredIngredients = ingredientsInputRef.current.value;
+
+    const enteredVegeterian = vegeterianInputRef.current.value;
+    const enteredServes = servesInputRef.current.value;
+    const enteredCourse = courseInputRef.current.value;
+    const enteredNotes = notesInputRef.current.value;
 
     fetch(
       `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json?auth=${authCtx.token}`,
@@ -34,6 +46,10 @@ const RecipeForm = (props) => {
           image: enteredImage,
           description: enteredDescription,
           ingredients: enteredIngredients,
+          vegeterian: enteredVegeterian,
+          serves: enteredServes,
+          course: enteredCourse,
+          notes: enteredNotes,
         }),
       }
     ).then(router.push("/"));
@@ -91,6 +107,60 @@ const RecipeForm = (props) => {
               ref={ingredientsInputRef}
             ></input>
           </div>
+          <div className={style.form_components}>
+            <label htmlFor="vegetarian">Vegetarian?</label>
+            <input
+              ref={vegeterianInputRef}
+              id="vegetarian"
+              type="checkbox"
+            ></input>
+          </div>
+          <div className={style.form_components}>
+            <p>What course is it?</p>
+            <input
+              type="radio"
+              value="starter"
+              name="course"
+              ref={courseInputRef}
+            ></input>
+            <label htmlFor="starter">Starter</label>
+            <input
+              type="radio"
+              value="main"
+              name="course"
+              ref={courseInputRef}
+            ></input>
+            <label htmlFor="main">Main</label>
+
+            <input
+              type="radio"
+              value="dessert"
+              name="course"
+              ref={courseInputRef}
+            ></input>
+            <label htmlFor="dessert">Dessert</label>
+
+            <input
+              type="radio"
+              value="nibble"
+              name="course"
+              ref={courseInputRef}
+            ></input>
+            <label htmlFor="nibble">Nibble</label>
+          </div>
+
+          <div className={style.form_components}>
+            <label htmlFor="serves">How many people does it serve?</label>
+            <input id="serves" type="number" ref={servesInputRef}></input>
+          </div>
+          <label htmlFor="notes">Additional Notes (optional)</label>
+          <textarea
+            name="notes"
+            id="notes"
+            cols="30"
+            rows="10"
+            ref={notesInputRef}
+          ></textarea>
         </div>
         <div className={style.form_buttons}>
           <button>Create</button>

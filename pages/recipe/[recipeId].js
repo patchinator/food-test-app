@@ -9,6 +9,10 @@ const Details = (props) => {
       image={props.recipe.image}
       time={props.recipe.time}
       ingredients={props.recipe.ingredients}
+      notes={props.recipe.notes}
+      course={props.recipe.course}
+      vegetarian={props.recipe.vegeterian}
+      serves={props.recipe.serves}
     />
   );
 };

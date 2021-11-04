@@ -54,16 +54,16 @@ const RecipeDetails = (props) => {
               <div className={style.course}>
                 <FontAwesomeIcon width="1.5rem" icon={faUtensils} />
                 <h5>Course:</h5>
-                <p>TODO</p>
+                <p>{props.course}</p>
               </div>
               <div className={style.time}>
                 <FontAwesomeIcon width="1.5rem" icon={faClock} />
                 <p>{props.time} mins</p>
               </div>
-              <div className={style.vegeterian}>
+              <div className={style.vegetarian}>
                 <FontAwesomeIcon width="1.5rem" icon={faSeedling} />
-                <h5>Vegeterian?</h5>
-                <p>TODO</p>
+                <h5>Vegetarian?</h5>
+                <p>{props.vegetarian}</p>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ const RecipeDetails = (props) => {
           <div className={style.servings}>
             <FontAwesomeIcon width="2rem" icon={faUsers} />
             <h5>Serves:</h5>
-            <p>TODO</p>
+            <p>{props.serves}</p>
           </div>
 
           <div className={style.ingredients}>
@@ -96,7 +96,7 @@ const RecipeDetails = (props) => {
         </div>
         <div className={style.notes}>
           <h2>Notes</h2>
-          <p>Suck my balls, ass and titties.</p>
+          <p>{props.notes}</p>
         </div>
         <div className={style.back_button}>
           <Link href="/" passHref>
