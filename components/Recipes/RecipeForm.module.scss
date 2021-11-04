@@ -14,19 +14,19 @@
 
       .create_recipe_top {
         background: rgb(231, 255, 231);
-        padding: 1rem;
         display: flex;
+        padding: 1rem;
 
-        .recipe_title,
-        .recipe_prep,
-        .recipe_difficulty,
-        .recipe_image {
-          padding: 0.5rem;
+        //     .recipe_title,
+        //     .recipe_prep,
+        //     .recipe_difficulty,
+        //     .recipe_image {
+        //       padding: 0.5rem;
 
-          input {
-            padding: 0.5rem;
-          }
-        }
+        //       input {
+        //         padding: 0.5rem;
+        //       }
+        //     }
       }
     }
   }

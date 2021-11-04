@@ -72,8 +72,11 @@ const RecipeForm = (props) => {
                 name="difficulty"
                 id="difficulty"
                 ref={difficultyInputRef}
+                className="pt-2"
               >
-                <option value="easy">Easy</option>
+                <option selected value="easy">
+                  Easy
+                </option>
                 <option value="moderate">Moderate</option>
                 <option value="challenging">Challenging</option>
               </select>
