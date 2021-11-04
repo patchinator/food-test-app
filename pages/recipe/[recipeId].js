@@ -1,7 +1,6 @@
 import RecipeDetails from "../../components/Recipes/RecipeDetails";
 
 const Details = (props) => {
-  console.log(props.recipe);
   return (
     <RecipeDetails
       title={props.recipe.title}

@@ -5,8 +5,10 @@ import {
   faClock,
   faStar,
   faUser,
+  faUsers,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+import Button from "../UI/Button";
 
 const RecipeDetails = (props) => {
   return (
@@ -24,7 +26,7 @@ const RecipeDetails = (props) => {
 
           <div className={style.recipe_info}>
             <div className={style.difficulty}>
-              <p>Difficulty:</p>
+              <h5>Difficulty:</h5>
               {props.difficulty === "easy" && (
                 <FontAwesomeIcon width="1.5rem" icon={faStar} />
               )}
@@ -58,19 +60,35 @@ const RecipeDetails = (props) => {
             </div>
           </div>
         </div>
+        <div className={style.servings}>
+          <FontAwesomeIcon width="2rem" icon={faUsers} />
+          <h5>Serves:</h5>
+          <p>TODO</p>
+        </div>
+
+        <div className={style.ingredients}>
+          <h2>{`${props.ingredients.split(",").length} Ingredients`}</h2>
+          <ul>
+            {props.ingredients.split(",").map((ingredient) => (
+              <li key={ingredient}>{ingredient}</li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className={style.details_right}>
-        <div className={style.details_sub_header_wrap}>
-          <h2 className={style.details_sub_headers}>Ingredients</h2>
+        <h2>Recipe</h2>
+        <div className={style.recipe_steps}>
+          <ul>
+            {props.description.split(".").map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ul>
         </div>
-        <p className={style.ingredients}>{props.ingredients}</p>
-        <div className={style.details_sub_header_wrap}>
-          <h2 className={style.details_sub_headers}>Recipe</h2>
-        </div>
-        <p className={style.description}>{props.description}</p>
-        <div className={style.details_footer}>
-          <Link href="/">Back</Link>
+        <div className={style.back_button}>
+          <Link href="/" passHref>
+            <Button>Back</Button>
+          </Link>
         </div>
       </div>
     </div>
