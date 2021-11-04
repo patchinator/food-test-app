@@ -2,7 +2,7 @@ import { useState, useRef, useContext } from "react";
 
 import AuthContext from "../../store/auth-context";
 import Link from "next/link";
-import style from "./AuthForm.module.css";
+import style from "./AuthForm.module.scss";
 import { useRouter } from "next/router";
 
 const AuthForm = () => {
@@ -65,9 +65,9 @@ const AuthForm = () => {
       })
       .then((data) => {
         // successful request
-        authCtx.login(data.idToken)
+        authCtx.login(data.idToken);
         // data.idToken is token recieved from firebase, pass it
-        router.push('/')
+        router.push("/");
         // push user to homepage on login success
       })
       .catch((error) => {
