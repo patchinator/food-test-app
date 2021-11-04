@@ -10,18 +10,20 @@ const RecipeDetails = (props) => {
         <div className={style.details_header}>
           <h1>{props.title}</h1>
 
-          {props.difficulty === "easy" && <FontAwesomeIcon icon={faStar} />}
+          {props.difficulty === "easy" && (
+            <FontAwesomeIcon width="2rem" icon={faStar} />
+          )}
           {props.difficulty === "moderate" && (
             <div>
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon width="2rem" icon={faStar} />
+              <FontAwesomeIcon width="2rem" icon={faStar} />
             </div>
           )}
           {props.difficulty === "challenging" && (
             <div>
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon width="2rem" icon={faStar} />
+              <FontAwesomeIcon width="2rem" icon={faStar} />
+              <FontAwesomeIcon width="2rem" icon={faStar} />
             </div>
           )}
         </div>
