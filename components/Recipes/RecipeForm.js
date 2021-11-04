@@ -1,6 +1,7 @@
 import style from "./RecipeForm.module.css";
-import { useRef } from "react";
-import { useRouter } from "next/dist/client/router";;
+import { useRef, useContext } from "react";
+import { useRouter } from "next/dist/client/router";
+import AuthContext from "../../store/auth-context";
 
 const RecipeForm = (props) => {
   const router = useRouter();
@@ -9,6 +10,8 @@ const RecipeForm = (props) => {
   const prepTimeInputRef = useRef();
   const imageInputRef = useRef();
   const descriptionInputRef = useRef();
+  const ingredientsInputRef = useRef();
+  const authCtx = useContext(AuthContext);
 
   const submitRecipeHandler = (event) => {
     event.preventDefault();
@@ -18,9 +21,10 @@ const RecipeForm = (props) => {
     const enteredTime = prepTimeInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
+    const enteredIngredients = ingredientsInputRef.current.value;
 
     fetch(
-      "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json",
+      `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json?auth=${authCtx.token}`,
       {
         method: "POST",
         body: JSON.stringify({
@@ -29,16 +33,17 @@ const RecipeForm = (props) => {
           time: enteredTime,
           image: enteredImage,
           description: enteredDescription,
+          ingredients: enteredIngredients,
         }),
       }
-    ).then(router.push("/"))
+    ).then(router.push("/"));
   };
 
   return (
     <div className={style.create_recipe}>
       <div className={style.form_gap}></div>
       <form onSubmit={submitRecipeHandler} className={style.form}>
-      <h1 className={style.form_header}>Create new Recipe</h1>
+        <h1 className={style.form_header}>Create new Recipe</h1>
         <div className={style.row}>
           <div className={style.column}>
             <div className={style.form_layout}>
@@ -47,7 +52,11 @@ const RecipeForm = (props) => {
             </div>
             <div className={style.form_components}>
               <label htmlFor="difficulty">Difficulty</label>
-              <select name="difficulty" id="difficulty" ref={difficultyInputRef}>
+              <select
+                name="difficulty"
+                id="difficulty"
+                ref={difficultyInputRef}
+              >
                 <option value="easy">Easy</option>
                 <option value="moderate">Moderate</option>
                 <option value="challenging">Challenging</option>
@@ -74,6 +83,14 @@ const RecipeForm = (props) => {
             rows="15"
             ref={descriptionInputRef}
           ></textarea>
+          <div className={style.form_components}>
+            <label htmlFor="ingredients">Ingredients</label>
+            <input
+              id="ingredients"
+              type="text"
+              ref={ingredientsInputRef}
+            ></input>
+          </div>
         </div>
         <div className={style.form_buttons}>
           <button>Create</button>

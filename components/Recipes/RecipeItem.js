@@ -41,16 +41,6 @@ const RecipeItem = (props) => {
           <div className={style.time}>
             <div>{props.time} mins</div>
           </div>
-          <div className={style.remove}>
-            {/* <button onClick={deleteRecipeHandler}>
-              <FontAwesomeIcon icon={faTrash} />
-            </button>
-          </div>
-          <div className={style.info}>
-            <button onClick={props.onOpenModal}>
-              <FontAwesomeIcon icon={faFileAlt} />
-            </button> */}
-          </div>
           <img src={props.image} alt={props.title} />
         </div>
       </motion.li>

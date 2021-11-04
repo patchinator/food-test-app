@@ -1,0 +1,32 @@
+@import "../../styles/theme.scss";
+
+.position {
+  display: flex;
+  justify-content: center;
+
+  .icons {
+    list-style: none;
+    width: 80%;
+    height: 10rem;
+    border-top: 1px solid $border_color;
+    margin: 0 2rem 0 2rem;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+    li {
+      width: 2.5rem;
+      margin: 1rem 3rem 0 3rem;
+      padding: 0;
+
+      &:active,
+      &:hover {
+        color: $theme_secondary;
+      }
+    }
+
+    a {
+      transition: 150ms ease-in;
+    }
+  }
+}

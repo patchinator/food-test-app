@@ -1,0 +1,17 @@
+.container {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.show_more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
