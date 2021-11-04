@@ -56,17 +56,17 @@ const RecipeForm = (props) => {
   };
 
   return (
-    <div className={style.create_recipe}>
-      <div className={style.form_gap}></div>
-      <form onSubmit={submitRecipeHandler} className={style.form}>
-        <h1 className={style.form_header}>Create new Recipe</h1>
-        <div className={style.row}>
-          <div className={style.column}>
-            <div className={style.form_layout}>
+    <div className={style.create_recipe_container}>
+      <div className={style.create_recipe}>
+        <form onSubmit={submitRecipeHandler} className={style.form}>
+          <h1 className={style.form_header}>Create new Recipe</h1>
+
+          <div className={style.create_recipe_top}>
+            <div className={style.recipe_title}>
               <label htmlFor="title">Title</label>
               <input id="title" type="text" ref={titleInputRef}></input>
             </div>
-            <div className={style.form_components}>
+            <div className={style.recipe_difficulty}>
               <label htmlFor="difficulty">Difficulty</label>
               <select
                 name="difficulty"
@@ -78,94 +78,102 @@ const RecipeForm = (props) => {
                 <option value="challenging">Challenging</option>
               </select>
             </div>
-          </div>
-          <div className={style.column}>
-            <div className={style.form_components}>
+            <div className={style.recipe_prep}>
               <label htmlFor="prepTime">Preparation Time (mins)</label>
               <input id="prepTime" type="number" ref={prepTimeInputRef}></input>
             </div>
-            <div className={style.form_components}>
+            <div className={style.recipe_image}>
               <label htmlFor="image">Image</label>
               <input id="image" type="url" ref={imageInputRef}></input>
             </div>
           </div>
-        </div>
-        <div className={style.form_components}>
-          <label htmlFor="description">Recipe details</label>
-          <textarea
-            name="description"
-            id="description"
-            cols="30"
-            rows="15"
-            ref={descriptionInputRef}
-          ></textarea>
-          <div className={style.form_components}>
-            <label htmlFor="ingredients">Ingredients</label>
-            <input
-              id="ingredients"
-              type="text"
-              ref={ingredientsInputRef}
-            ></input>
-          </div>
-          <div className={style.form_components}>
-            <label htmlFor="vegetarian">Vegetarian?</label>
-            <input
-              ref={vegeterianInputRef}
-              id="vegetarian"
-              type="checkbox"
-            ></input>
-          </div>
-          <div className={style.form_components}>
-            <p>What course is it?</p>
-            <input
-              type="radio"
-              value="starter"
-              name="course"
-              ref={courseInputRef}
-            ></input>
-            <label htmlFor="starter">Starter</label>
-            <input
-              type="radio"
-              value="main"
-              name="course"
-              ref={courseInputRef}
-            ></input>
-            <label htmlFor="main">Main</label>
-
-            <input
-              type="radio"
-              value="dessert"
-              name="course"
-              ref={courseInputRef}
-            ></input>
-            <label htmlFor="dessert">Dessert</label>
-
-            <input
-              type="radio"
-              value="nibble"
-              name="course"
-              ref={courseInputRef}
-            ></input>
-            <label htmlFor="nibble">Nibble</label>
-          </div>
 
           <div className={style.form_components}>
-            <label htmlFor="serves">How many people does it serve?</label>
-            <input id="serves" type="number" ref={servesInputRef}></input>
+            <label htmlFor="description">Recipe details</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="15"
+              ref={descriptionInputRef}
+            ></textarea>
+            <div className={style.form_components}>
+              <label htmlFor="ingredients">Ingredients</label>
+              <input
+                id="ingredients"
+                type="text"
+                ref={ingredientsInputRef}
+              ></input>
+            </div>
+            <div className={style.form_components}>
+              <p>Vegeterian?</p>
+              <label htmlFor="vegetarian">Yes</label>
+              <input
+                ref={vegeterianInputRef}
+                id="vegetarian"
+                type="checkbox"
+                value="yes"
+              ></input>
+              <label htmlFor="vegetarian">No</label>
+              <input
+                ref={vegeterianInputRef}
+                id="vegetarian"
+                type="checkbox"
+                value="no"
+              ></input>
+            </div>
+            <div className={style.form_components}>
+              <p>What course is it?</p>
+              <input
+                type="radio"
+                value="starter"
+                name="course"
+                ref={courseInputRef}
+              ></input>
+              <label htmlFor="starter">Starter</label>
+              <input
+                type="radio"
+                value="main"
+                name="course"
+                ref={courseInputRef}
+              ></input>
+              <label htmlFor="main">Main</label>
+
+              <input
+                type="radio"
+                value="dessert"
+                name="course"
+                ref={courseInputRef}
+              ></input>
+              <label htmlFor="dessert">Dessert</label>
+
+              <input
+                type="radio"
+                value="nibble"
+                name="course"
+                ref={courseInputRef}
+              ></input>
+              <label htmlFor="nibble">Nibble</label>
+            </div>
+
+            <div className={style.form_components}>
+              <label htmlFor="serves">How many people does it serve?</label>
+              <input id="serves" type="number" ref={servesInputRef}></input>
+            </div>
+            <label htmlFor="notes">Additional Notes (optional)</label>
+            <textarea
+              name="notes"
+              id="notes"
+              cols="30"
+              rows="10"
+              ref={notesInputRef}
+            ></textarea>
           </div>
-          <label htmlFor="notes">Additional Notes (optional)</label>
-          <textarea
-            name="notes"
-            id="notes"
-            cols="30"
-            rows="10"
-            ref={notesInputRef}
-          ></textarea>
-        </div>
-        <div className={style.form_buttons}>
-          <button>Create</button>
-        </div>
-      </form>
+          <div className={style.form_buttons}>
+            <button>Create</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

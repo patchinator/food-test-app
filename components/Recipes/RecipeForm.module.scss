@@ -1,75 +1,33 @@
 @import "../../styles/theme.scss";
 
-.create_recipe {
-  padding-bottom: 2rem;
-  object-fit: cover;
-}
-
-.form {
-  background-color: $theme_primary;
-  margin: auto;
-  max-width: 50%;
-  padding: 1rem;
-  font-size: 18px;
-  margin-top: 1rem;
-}
-
-.form_gap {
-  padding-top: 1rem;
-}
-
-.form_header {
-  text-align: center;
-  margin: 0;
-  padding-top: 1rem;
-}
-
-.form_layout {
+.create_recipe_container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-}
 
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  column-gap: 2.5rem;
-}
+  .create_recipe {
+    display: flex;
 
-.column {
-  display: flex;
-  flex-direction: column;
-}
+    form {
+      h1 {
+        text-align: center;
+      }
 
-.form_components {
-  padding: 1rem;
-  text-align: center;
-}
+      .create_recipe_top {
+        background: rgb(231, 255, 231);
+        padding: 1rem;
+        display: flex;
 
-.form_components label {
-  display: block;
-  text-align: center;
-}
+        .recipe_title,
+        .recipe_prep,
+        .recipe_difficulty,
+        .recipe_image {
+          padding: 0.5rem;
 
-.form_components input {
-  width: 100%;
-}
-
-.form_components textarea {
-  width: 80%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.form_components select {
-  width: 100%;
-}
-
-.form_buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+          input {
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }
