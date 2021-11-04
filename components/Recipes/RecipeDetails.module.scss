@@ -2,52 +2,102 @@
 
 .details_wrapper {
   display: flex;
-  justify-content: center;
-  margin-top: 2rem;
 
-  .details {
-    width: 60%;
+  .details_left {
+    flex: 50%;
+    position: relative;
+    padding: 0 2rem 0 2rem;
+    margin-top: 7.5rem;
 
     .details_header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .details_image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-
-      img {
-        width: 720px;
-        height: 540px;
-      }
-
-      .time {
-        border-radius: 2rem;
-        font-size: 20px;
-        padding: 1rem 2rem 1rem 2rem;
-        background: $theme_primary;
-        position: absolute;
-        top: 0;
-        left: 9rem;
-      }
-    }
-
-    .details_sub_headers {
-      border-bottom: 1px solid black;
       text-align: center;
+      padding-bottom: 0.5rem;
     }
 
-    .description {
-      white-space: pre-wrap;
-    }
+    .detials_theme {
+      background: $theme_primary;
 
-    .details_footer {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 2rem;
+      .details_image_wrapper {
+        display: flex;
+        justify-content: center;
+
+        .details_image {
+          background: $theme_primary;
+          border-radius: 50%;
+          margin-top: -5rem;
+
+          img {
+            width: 12rem;
+            height: 12rem;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 1rem;
+            border: 1px solid rgb(44, 44, 44);
+          }
+        }
+      }
+
+      .recipe_info {
+        background: $theme_primary;
+        display: flex;
+        align-items: center;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        border-top: 1px solid black;
+        margin: 1rem;
+
+        .time {
+          flex: 25%;
+          display: flex;
+          align-items: center;
+
+          p {
+            margin-left: 0.25rem;
+          }
+        }
+
+        .author {
+          flex: 25%;
+          display: flex;
+          align-items: center;
+
+          h5 {
+            font-size: 16px;
+            margin: 0;
+            margin-left: 0.25rem;
+          }
+
+          p {
+            margin-left: 0.25rem;
+          }
+        }
+
+        .difficulty {
+          flex: 25%;
+          display: flex;
+          align-items: center;
+        }
+
+        .course {
+          flex: 25%;
+          display: flex;
+          align-items: center;
+
+          h5 {
+            font-size: 16px;
+            margin: 0;
+            margin-left: 0.25rem;
+          }
+
+          p {
+            margin-left: 0.25rem;
+          }
+        }
+      }
     }
+  }
+
+  .details_right {
+    flex: 50%;
   }
 }
