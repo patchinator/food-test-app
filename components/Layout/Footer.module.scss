@@ -1,8 +1,10 @@
+@import "../../styles/theme.scss";
+
 .icons {
   list-style: none;
   width: 80%;
   height: 10rem;
-  border-top: 1px solid rgb(228, 228, 228);
+  border-top: 1px solid $border_color;
   margin: 0 2rem 0 2rem;
   display: flex;
   justify-content: center;
@@ -21,7 +23,7 @@
 
 .icons li a:active,
 .icons li a:hover {
-  color: rgb(74, 185, 0);
+  color: $theme_secondary;
 }
 
 .position {

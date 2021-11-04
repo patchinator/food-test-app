@@ -31,9 +31,9 @@ const RecipeDetails = (props) => {
           <img src={props.image} alt={props.title} />
           <p className={style.time}>{props.time} mins</p>
         </div>
-        <p>Ingredients:</p>
+        <h2 className={style.details_sub_headers}>Ingredients:</h2>
         <p className={style.ingredients}>{props.ingredients}</p>
-        <p>Recipe:</p>
+        <h2 className={style.details_sub_headers}>Recipe:</h2>
         <p className={style.description}>{props.description}</p>
         <div className={style.details_footer}>
           <Link href="/">Back</Link>

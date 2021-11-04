@@ -1,3 +1,5 @@
+@import "../../styles/theme.scss";
+
 .details_wrapper {
   display: flex;
   justify-content: center;
@@ -26,11 +28,16 @@
         border-radius: 2rem;
         font-size: 20px;
         padding: 1rem 2rem 1rem 2rem;
-        background: rgb(202, 255, 129);
+        background: $theme_primary;
         position: absolute;
         top: 0;
         left: 9rem;
       }
+    }
+
+    .details_sub_headers {
+      border-bottom: 1px solid black;
+      text-align: center;
     }
 
     .description {
