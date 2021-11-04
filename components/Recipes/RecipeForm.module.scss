@@ -26,6 +26,7 @@
         .recipe_difficulty,
         .recipe_image {
           padding: 0.5rem;
+          text-align: center;
 
           input,
           select {
@@ -33,6 +34,7 @@
             border-radius: 0.5rem;
             border: none;
             margin-left: 0.25rem;
+            margin-top: 0.5rem;
             font-size: inherit;
           }
         }
