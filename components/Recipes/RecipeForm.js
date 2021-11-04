@@ -91,86 +91,94 @@ const RecipeForm = (props) => {
             </div>
           </div>
 
-          <div className={style.form_components}>
-            <label htmlFor="description">Recipe details</label>
-            <textarea
-              name="description"
-              id="description"
-              cols="30"
-              rows="15"
-              ref={descriptionInputRef}
-            ></textarea>
-            <div className={style.form_components}>
-              <label htmlFor="ingredients">Ingredients</label>
-              <input
-                id="ingredients"
-                type="text"
-                ref={ingredientsInputRef}
-              ></input>
+          <div className={style.recipe_middle}>
+            <div className={style.recipe_vegetarian}>
+              <p>Vegetarian?</p>
+              <div>
+                <div>
+                  <input
+                    ref={vegeterianInputRef}
+                    id="vegetarian"
+                    type="checkbox"
+                    value="yes"
+                  ></input>
+                  <label htmlFor="vegetarian">Yes</label>
+                </div>
+                <div>
+                  <input
+                    ref={vegeterianInputRef}
+                    id="vegetarian"
+                    type="checkbox"
+                    value="no"
+                  ></input>
+                  <label htmlFor="vegetarian">No</label>
+                </div>
+              </div>
             </div>
-            <div className={style.form_components}>
-              <p>Vegeterian?</p>
-              <label htmlFor="vegetarian">Yes</label>
-              <input
-                ref={vegeterianInputRef}
-                id="vegetarian"
-                type="checkbox"
-                value="yes"
-              ></input>
-              <label htmlFor="vegetarian">No</label>
-              <input
-                ref={vegeterianInputRef}
-                id="vegetarian"
-                type="checkbox"
-                value="no"
-              ></input>
-            </div>
-            <div className={style.form_components}>
+            <div className={style.recipe_course}>
               <p>What course is it?</p>
-              <input
-                type="radio"
-                value="starter"
-                name="course"
-                ref={courseInputRef}
-              ></input>
-              <label htmlFor="starter">Starter</label>
-              <input
-                type="radio"
-                value="main"
-                name="course"
-                ref={courseInputRef}
-              ></input>
-              <label htmlFor="main">Main</label>
+              <div>
+                <input
+                  type="radio"
+                  value="starter"
+                  name="course"
+                  ref={courseInputRef}
+                ></input>
+                <label htmlFor="starter">Starter</label>
+                <input
+                  type="radio"
+                  value="main"
+                  name="course"
+                  ref={courseInputRef}
+                ></input>
+                <label htmlFor="main">Main</label>
+                <input
+                  type="radio"
+                  value="dessert"
+                  name="course"
+                  ref={courseInputRef}
+                ></input>
+                <label htmlFor="dessert">Dessert</label>
 
-              <input
-                type="radio"
-                value="dessert"
-                name="course"
-                ref={courseInputRef}
-              ></input>
-              <label htmlFor="dessert">Dessert</label>
-
-              <input
-                type="radio"
-                value="nibble"
-                name="course"
-                ref={courseInputRef}
-              ></input>
-              <label htmlFor="nibble">Nibble</label>
+                <input
+                  type="radio"
+                  value="nibble"
+                  name="course"
+                  ref={courseInputRef}
+                ></input>
+                <label htmlFor="nibble">Nibble</label>
+              </div>
             </div>
 
-            <div className={style.form_components}>
+            <div className={style.recipe_serves}>
               <label htmlFor="serves">How many people does it serve?</label>
               <input id="serves" type="number" ref={servesInputRef}></input>
             </div>
-            <label htmlFor="notes">Additional Notes (optional)</label>
-            <textarea
-              name="notes"
-              id="notes"
-              cols="30"
-              rows="10"
-              ref={notesInputRef}
-            ></textarea>
+          </div>
+
+          <label htmlFor="notes">Additional Notes (optional)</label>
+          <textarea
+            name="notes"
+            id="notes"
+            cols="30"
+            rows="10"
+            ref={notesInputRef}
+          ></textarea>
+          <label htmlFor="description">Recipe details</label>
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="15"
+            ref={descriptionInputRef}
+          ></textarea>
+          <div className={style.form_components}>
+            <label htmlFor="ingredients">Ingredients</label>
+            <input
+              id="ingredients"
+              type="text"
+              ref={ingredientsInputRef}
+            ></input>
           </div>
           <div className={style.form_buttons}>
             <button>Create</button>

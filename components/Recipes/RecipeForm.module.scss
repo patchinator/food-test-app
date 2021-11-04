@@ -6,6 +6,7 @@
 
   .create_recipe {
     display: flex;
+    font-size: 20px;
 
     form {
       h1 {
@@ -16,17 +17,89 @@
         background: rgb(231, 255, 231);
         display: flex;
         padding: 1rem;
+        margin-bottom: 1rem;
 
-        //     .recipe_title,
-        //     .recipe_prep,
-        //     .recipe_difficulty,
-        //     .recipe_image {
-        //       padding: 0.5rem;
+        .recipe_title,
+        .recipe_prep,
+        .recipe_difficulty,
+        .recipe_image {
+          padding: 0.5rem;
 
-        //       input {
-        //         padding: 0.5rem;
-        //       }
-        //     }
+          input,
+          select {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            margin-left: 0.25rem;
+          }
+        }
+      }
+
+      .recipe_middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(231, 255, 231);
+
+        .recipe_vegetarian,
+        .recipe_course,
+        .recipe_serves {
+          display: flex;
+          flex: 33%;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          input {
+            font-size: inherit;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            width: 5rem;
+          }
+        }
+
+        .recipe_serves {
+          display: flex;
+          flex-direction: column;
+
+          label {
+            padding-bottom: 0.5rem;
+            padding-top: 1rem;
+          }
+        }
+
+        .recipe_course {
+          display: flex;
+          flex-direction: column;
+
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+
+        .recipe_vegetarian {
+          display: flex;
+          flex-direction: column;
+
+          div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            input {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
       }
     }
   }
