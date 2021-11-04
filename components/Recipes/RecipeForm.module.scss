@@ -6,6 +6,8 @@
 
   .create_recipe {
     display: flex;
+    justify-content: center;
+    width: 50%;
     font-size: 20px;
 
     form {
@@ -14,7 +16,7 @@
       }
 
       .create_recipe_top {
-        background: rgb(231, 255, 231);
+        background: $theme_primary;
         display: flex;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -31,6 +33,7 @@
             border-radius: 0.5rem;
             border: none;
             margin-left: 0.25rem;
+            font-size: inherit;
           }
         }
       }
@@ -39,7 +42,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgb(231, 255, 231);
+        background: $theme_primary;
+        margin-bottom: 1rem;
 
         .recipe_vegetarian,
         .recipe_course,
@@ -66,6 +70,12 @@
           label {
             padding-bottom: 0.5rem;
             padding-top: 1rem;
+          }
+
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
           }
         }
 
@@ -102,5 +112,94 @@
         }
       }
     }
+
+    .create_recipe_bottom {
+      display: flex;
+      background: $theme_primary;
+      padding-bottom: 1rem;
+
+      textarea {
+        resize: none;
+      }
+
+      div {
+        flex: 50%;
+      }
+
+      .recipe_details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem 0.5rem 0 1rem;
+
+        label {
+          padding-bottom: 1rem;
+        }
+
+        textarea {
+          font-family: inherit;
+          font-size: inherit;
+          padding: 1rem;
+          border: none;
+          border-radius: 0.5rem;
+          width: 100%;
+        }
+      }
+
+      .recipe_ingredients {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 1rem 1rem 0 0.5rem;
+
+        label {
+          margin-bottom: 1rem;
+        }
+
+        input {
+          font-size: inherit;
+          padding: 0.5rem;
+          width: 100%;
+          border: none;
+          border-radius: 0.5rem;
+        }
+      }
+
+      .recipe_notes {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 1rem 1rem 0 0.5rem;
+
+        label {
+          padding-bottom: 1rem;
+        }
+
+        textarea {
+          font-size: inherit;
+          font-family: inherit;
+          width: 100%;
+          height: 12.7rem;
+          border: none;
+          border-radius: 0.5rem;
+          padding: 1rem;
+        }
+      }
+    }
+    .form_buttons {
+      background: $theme_primary;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .additional_info {
+    font-size: 14px;
+    font-style: italic;
   }
 }

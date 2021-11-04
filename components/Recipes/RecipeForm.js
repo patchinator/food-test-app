@@ -2,6 +2,7 @@ import style from "./RecipeForm.module.scss";
 import { useRef, useContext } from "react";
 import { useRouter } from "next/dist/client/router";
 import AuthContext from "../../store/auth-context";
+import Button from "../UI/Button";
 
 const RecipeForm = (props) => {
   const router = useRouter();
@@ -119,6 +120,7 @@ const RecipeForm = (props) => {
               <p>What course is it?</p>
               <div>
                 <input
+                  required
                   type="radio"
                   value="starter"
                   name="course"
@@ -149,39 +151,58 @@ const RecipeForm = (props) => {
                 <label htmlFor="nibble">Nibble</label>
               </div>
             </div>
-
             <div className={style.recipe_serves}>
               <label htmlFor="serves">How many people does it serve?</label>
               <input id="serves" type="number" ref={servesInputRef}></input>
             </div>
           </div>
 
-          <label htmlFor="notes">Additional Notes (optional)</label>
-          <textarea
-            name="notes"
-            id="notes"
-            cols="30"
-            rows="10"
-            ref={notesInputRef}
-          ></textarea>
-          <label htmlFor="description">Recipe details</label>
-          <textarea
-            name="description"
-            id="description"
-            cols="30"
-            rows="15"
-            ref={descriptionInputRef}
-          ></textarea>
-          <div className={style.form_components}>
-            <label htmlFor="ingredients">Ingredients</label>
-            <input
-              id="ingredients"
-              type="text"
-              ref={ingredientsInputRef}
-            ></input>
+          <div className={style.create_recipe_bottom}>
+            <div className={style.recipe_details}>
+              <label htmlFor="description">Recipe details</label>
+              <p className={style.additional_info}>
+                Include the steps to creating your wonderful dish! Simply
+                seperate each step with a full stop.
+              </p>
+              <textarea
+                name="description"
+                id="description"
+                rows="15"
+                ref={descriptionInputRef}
+              ></textarea>
+            </div>
+            <div>
+              <div className={style.recipe_ingredients}>
+                <label htmlFor="ingredients">Ingredients</label>
+                <p className={style.additional_info}>
+                  List all the ingredients (and measurements)! Seperate each
+                  ingredient with a comma.
+                </p>
+                <input
+                  id="ingredients"
+                  type="text"
+                  ref={ingredientsInputRef}
+                ></input>
+              </div>
+              <div className={style.recipe_notes}>
+                <label htmlFor="notes">Additional Notes (optional)</label>
+                <p className={style.additional_info}>
+                  Add any additional notes to your recipe. They could be
+                  suggestions for substitute ingredients, similar recipes,
+                  culinary tips and tricks... anything!
+                </p>
+                <textarea
+                  name="notes"
+                  id="notes"
+                  cols="80"
+                  rows="8"
+                  ref={notesInputRef}
+                ></textarea>
+              </div>
+            </div>
           </div>
           <div className={style.form_buttons}>
-            <button>Create</button>
+            <Button>Create Recipe</Button>
           </div>
         </form>
       </div>
