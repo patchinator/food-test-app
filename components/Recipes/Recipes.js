@@ -9,6 +9,7 @@ const Recipes = (props) => {
   const [librarySize, setLibrarySize] = useState(12);
   const [searchRecipe, setSearchRecipe] = useState("");
   const formRef = useRef();
+  let recipeArr = [];
 
   const showMoreRecipesHandler = () => {
     const newSize = librarySize + 8;
