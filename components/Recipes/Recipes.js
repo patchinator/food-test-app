@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useRef } from "react";
 
 import RecipeItem from "./RecipeItem";
 import style from "./Recipes.module.scss";
@@ -8,6 +8,7 @@ import ButtonTwo from "../UI/ButtonTwo";
 const Recipes = (props) => {
   const [librarySize, setLibrarySize] = useState(12);
   const [searchRecipe, setSearchRecipe] = useState("");
+  const formRef = useRef();
 
   const showMoreRecipesHandler = () => {
     const newSize = librarySize + 8;
@@ -18,15 +19,24 @@ const Recipes = (props) => {
     setSearchRecipe(event.target.value);
   };
 
+  const resetFilterHandler = (event) => {
+    event.preventDefault();
+    setSearchRecipe("");
+    formRef.current.reset();
+  };
+
   return (
     <Fragment>
       <div className={style.filter_card_wrapper}>
         <div className={style.filter_card}>
-          <input
-            type="text"
-            placeholder="Filter by recipe.."
-            onChange={filterRecipeHandler}
-          />
+          <form ref={formRef}>
+            <input
+              type="text"
+              placeholder="Filter by recipe.."
+              onChange={filterRecipeHandler}
+            />
+            <button onClick={resetFilterHandler}>Clear</button>
+          </form>
         </div>
       </div>
 
