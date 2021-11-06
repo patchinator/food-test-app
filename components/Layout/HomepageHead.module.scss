@@ -4,6 +4,10 @@
   height: 32rem;
   overflow: hidden;
   z-index: 0;
+
+  .image {
+    z-index: 3;
+  }
 }
 
 .head_card {
@@ -13,73 +17,73 @@
   align-items: center;
   justify-content: center;
   z-index: 20;
-}
 
-.wrapper {
-  display: inline-flex;
-  background: rgb(202, 255, 129);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
+  .wrapper {
+    display: inline-flex;
+    background: rgb(202, 255, 129);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 
-.wrapper .static_text {
-  font-size: 60px;
-  font-weight: 400;
-  margin-top: 24px;
-}
+    .static_text {
+      font-size: 60px;
+      font-weight: 400;
+      margin-top: 24px;
+    }
 
-.wrapper .dynamic_text {
-  margin-left: 15px;
-  line-height: 90px;
-  height: 85px;
-  overflow: hidden;
-  padding: 0;
-}
+    .dynamic_text {
+      margin-left: 15px;
+      line-height: 90px;
+      height: 85px;
+      overflow: hidden;
+      padding: 0;
 
-.text_box {
-  background-color: white;
-  border-radius: 20px;
-  margin: 0.5rem 0 0.5rem 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  padding-right: 8px;
-}
+      li {
+        list-style: none;
+        font-size: 60px;
+        font-weight: 300;
+        position: relative;
+        animation: slide 8s steps(4) infinite;
+        top: 0;
+        color: rgb(104, 101, 101);
+      }
 
-.dynamic_text li {
-  list-style: none;
-  font-size: 60px;
-  font-weight: 300;
-  position: relative;
-  animation: slide 8s steps(4) infinite;
-  top: 0;
-  color: rgb(104, 101, 101);
-}
+      @keyframes slide {
+        100% {
+          top: -360px;
+        }
+      }
 
-@keyframes slide {
-  100% {
-    top: -360px;
-  }
-}
+      li span {
+        position: relative;
+      }
 
-.dynamic_text li span {
-  position: relative;
-}
+      li span::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-left: 3px solid black;
+        background: white;
+        left: 0;
+        animation: typing 2s steps(9) infinite;
+      }
+    }
 
-.dynamic_text li span::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-left: 3px solid black;
-  background: white;
-  left: 0;
-  animation: typing 2s steps(9) infinite;
-}
+    @keyframes typing {
+      100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+      }
+    }
 
-@keyframes typing {
-  100% {
-    left: 100%;
-    margin: 0 -35px 0 35px;
+    .text_box {
+      background-color: white;
+      border-radius: 20px;
+      margin: 0.5rem 0 0.5rem 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      padding-right: 8px;
+    }
   }
 }
 
@@ -92,8 +96,4 @@
   align-items: center;
   padding: 1rem;
   z-index: 4;
-}
-
-.image {
-  z-index: 3;
 }
