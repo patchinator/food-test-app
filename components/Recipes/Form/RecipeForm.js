@@ -2,7 +2,7 @@ import style from "./RecipeForm.module.scss";
 import { useRef, useContext } from "react";
 import { useRouter } from "next/dist/client/router";
 import AuthContext from "../../../store/auth-context";
-import Button from "../../UI/Button";
+import ButtonTwo from "../../UI/ButtonTwo";
 import Link from "next/link";
 
 const RecipeForm = (props) => {
@@ -204,10 +204,10 @@ const RecipeForm = (props) => {
             </div>
           </div>
           <div className={style.form_buttons}>
-            <Button>Create Recipe</Button>
-            <Button type="button">
+            <ButtonTwo className={style.button}>Create Recipe</ButtonTwo>
+            <ButtonTwo className={style.button} type="button">
               <Link href="/">Back</Link>
-            </Button>
+            </ButtonTwo>
           </div>
         </form>
       </div>
