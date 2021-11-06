@@ -4,6 +4,7 @@ import AuthContext from "../../store/auth-context";
 import Link from "next/link";
 import style from "./AuthForm.module.scss";
 import { useRouter } from "next/router";
+import Button from "../UI/Button";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -76,42 +77,40 @@ const AuthForm = () => {
   };
 
   return (
-    <div>
+    <form onSubmit={submitHandler} className={style.form}>
       <h2 className={style.form_header}>
         {isLogin ? "Login" : "Create new Account"}
       </h2>
-      <form onSubmit={submitHandler} className={style.form}>
-        <div className={style.form_components}>
-          <label htmlFor="email">
-            {isLogin ? "Enter email" : "Enter new email"}
-          </label>
-          <input type="email" id="email" ref={enteredEmailRef} />
-        </div>
-        <div className={style.form_components}>
-          <label htmlFor="password">
-            {isLogin ? "Enter password" : "Create password"}
-          </label>
-          <input
-            type="password"
-            id="password"
-            minLength="6"
-            ref={enteredPasswordRef}
-          />
-        </div>
-        <div className={style.form_buttons}>
-          {!isLoading && (
-            <button>{isLogin ? "Login" : "Create Account"}</button>
-          )}
-          {isLoading && <p>Sending...</p>}
-          <button type="button" onClick={authModeHandler}>
-            {isLogin ? "Create new Account" : "Login with existing Account"}
-          </button>
-        </div>
-      </form>
-      <div className={style.form_back}>
-        <Link href="/">Back</Link>
+      <div className={style.form_components}>
+        <label htmlFor="email">
+          {isLogin ? "Enter email" : "Enter new email"}
+        </label>
+        <input type="email" id="email" ref={enteredEmailRef} />
       </div>
-    </div>
+      <div className={style.form_components}>
+        <label htmlFor="password">
+          {isLogin ? "Enter password" : "Create password"}
+        </label>
+        <input
+          type="password"
+          id="password"
+          minLength="6"
+          ref={enteredPasswordRef}
+        />
+      </div>
+      <div className={style.form_buttons}>
+        {!isLoading && <Button>{isLogin ? "Login" : "Create Account"}</Button>}
+        {isLoading && <p>Sending...</p>}
+        <Button type="button" onClick={authModeHandler}>
+          {isLogin ? "Create new Account" : "Login with existing Account"}
+        </Button>
+      </div>
+      <div className={style.form_back}>
+        <Button>
+          <Link href="/">Back</Link>
+        </Button>
+      </div>
+    </form>
   );
 };
 

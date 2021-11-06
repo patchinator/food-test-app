@@ -3,6 +3,7 @@ import Head from "next/head";
 import Recipes from "../components/Recipes/Recipes";
 import HomepageHead from "../components/Layout/HomepageHead";
 import Footer from "../components/Layout/Footer";
+import Layout from "../components/Layout/Layout";
 
 export default function Home() {
   const [library, setLibrary] = useState([]);
@@ -52,15 +53,17 @@ export default function Home() {
         <meta name="description" content="Create your own recipes with ease." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomepageHead />
-      <Recipes
-        library={library}
-        onRefresh={refreshLibraryHandler}
-        onOpenModal={showRecipeModal}
-        onCloseModal={hideRecipeModal}
-        modal={showModal}
-      />
-      <Footer />
+      <Layout>
+        <HomepageHead />
+        <Recipes
+          library={library}
+          onRefresh={refreshLibraryHandler}
+          onOpenModal={showRecipeModal}
+          onCloseModal={hideRecipeModal}
+          modal={showModal}
+        />
+        <Footer />
+      </Layout>
     </Fragment>
   );
 }

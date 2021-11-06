@@ -19,9 +19,7 @@ function MyApp({ Component, pageProps, router }) {
           },
         }}
       >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </motion.div>
     </AuthContextProvider>
   );
