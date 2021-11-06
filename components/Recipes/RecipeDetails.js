@@ -83,6 +83,10 @@ const RecipeDetails = (props) => {
             </ul>
           </div>
         </div>
+        <div className={style.notes}>
+          <h2>Notes</h2>
+          <p>{props.notes}</p>
+        </div>
       </div>
 
       <div className={style.details_right}>
@@ -93,10 +97,6 @@ const RecipeDetails = (props) => {
               <li key={step}>{step}</li>
             ))}
           </ul>
-        </div>
-        <div className={style.notes}>
-          <h2>Notes</h2>
-          <p>{props.notes}</p>
         </div>
         <div className={style.back_button}>
           <Link href="/" passHref>
