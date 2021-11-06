@@ -45,6 +45,7 @@ const HomepageHead = () => {
           </div>
         </div>
       </motion.div>
+      <div className={style.style_banner}></div>
     </HomepageBackground>
   );
 };
