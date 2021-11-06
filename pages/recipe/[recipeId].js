@@ -1,4 +1,4 @@
-import RecipeDetails from "../../components/Recipes/RecipeDetails";
+import RecipeDetails from "../../components/Recipes/recipe/RecipeDetails";
 import Footer from "../../components/Layout/Footer";
 import { Fragment } from "react";
 

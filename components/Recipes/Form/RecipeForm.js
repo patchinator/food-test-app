@@ -1,8 +1,8 @@
 import style from "./RecipeForm.module.scss";
 import { useRef, useContext } from "react";
 import { useRouter } from "next/dist/client/router";
-import AuthContext from "../../store/auth-context";
-import Button from "../UI/Button";
+import AuthContext from "../../../store/auth-context";
+import Button from "../../UI/Button";
 import Link from "next/link";
 
 const RecipeForm = (props) => {

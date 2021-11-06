@@ -1,6 +1,6 @@
 import { Fragment, useState, useRef } from "react";
 
-import RecipeItem from "./RecipeItem";
+import RecipeItem from "./recipe/RecipeItem";
 import style from "./Recipes.module.scss";
 import Link from "next/link";
 import ButtonTwo from "../UI/ButtonTwo";

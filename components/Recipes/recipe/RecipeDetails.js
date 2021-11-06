@@ -9,8 +9,8 @@ import {
   faUtensils,
   faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
-import ButtonTwo from "../UI/ButtonTwo";
-import Button from "../UI/Button";
+import ButtonTwo from "../../UI/ButtonTwo";
+import Button from "../../UI/Button";
 
 const RecipeDetails = (props) => {
   return (
