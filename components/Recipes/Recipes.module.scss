@@ -1,3 +1,5 @@
+@import "../../styles/theme.scss";
+
 .container {
   padding: 0;
   display: flex;
@@ -14,4 +16,23 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+}
+
+.filter_card_wrapper {
+  display: flex;
+  justify-content: center;
+
+  .filter_card {
+    margin-top: 2rem;
+    background: $theme_primary;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: 1rem;
+
+    input {
+      padding: 1rem;
+      border: none;
+      font-size: 20px;
+    }
+  }
 }
