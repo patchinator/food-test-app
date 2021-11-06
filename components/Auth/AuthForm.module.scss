@@ -7,8 +7,12 @@
   border-radius: 12px;
   font-size: 18px;
   position: absolute;
-  top: 10%;
+  top: 25%;
   right: 20%;
+
+  @media only screen and (max-width: 1300px) {
+    top: 10%;
+  }
 
   .form_header {
     text-align: center;

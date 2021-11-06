@@ -4,7 +4,7 @@ import AuthContext from "../../store/auth-context";
 import Link from "next/link";
 import style from "./AuthForm.module.scss";
 import { useRouter } from "next/router";
-import Button from "../UI/Button";
+import ButtonTwo from "../UI/ButtonTwo";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -99,16 +99,18 @@ const AuthForm = () => {
         />
       </div>
       <div className={style.form_buttons}>
-        {!isLoading && <Button>{isLogin ? "Login" : "Create Account"}</Button>}
+        {!isLoading && (
+          <ButtonTwo>{isLogin ? "Login" : "Create Account"}</ButtonTwo>
+        )}
         {isLoading && <p>Sending...</p>}
-        <Button type="button" onClick={authModeHandler}>
+        <ButtonTwo type="button" onClick={authModeHandler}>
           {isLogin ? "Create new Account" : "Login with existing Account"}
-        </Button>
+        </ButtonTwo>
       </div>
       <div className={style.form_back}>
-        <Button>
+        <ButtonTwo>
           <Link href="/">Back</Link>
-        </Button>
+        </ButtonTwo>
       </div>
     </form>
   );
