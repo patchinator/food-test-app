@@ -42,6 +42,7 @@ const RecipeForm = (props) => {
         method: "POST",
         body: JSON.stringify({
           title: enteredTitle,
+          author: authCtx.displayName,
           difficulty: enteredDifficulty,
           time: enteredTime,
           image: enteredImage,
