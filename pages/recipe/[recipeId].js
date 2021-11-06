@@ -1,19 +1,25 @@
 import RecipeDetails from "../../components/Recipes/RecipeDetails";
+import Footer from "../../components/Layout/Footer";
+import { Fragment } from "react";
 
 const Details = (props) => {
   return (
-    <RecipeDetails
-      title={props.recipe.title}
-      description={props.recipe.description}
-      difficulty={props.recipe.difficulty}
-      image={props.recipe.image}
-      time={props.recipe.time}
-      ingredients={props.recipe.ingredients}
-      notes={props.recipe.notes}
-      course={props.recipe.course}
-      vegetarian={props.recipe.vegeterian}
-      serves={props.recipe.serves}
-    />
+    <Fragment>
+      <RecipeDetails
+        title={props.recipe.title}
+        description={props.recipe.description}
+        difficulty={props.recipe.difficulty}
+        image={props.recipe.image}
+        time={props.recipe.time}
+        ingredients={props.recipe.ingredients}
+        notes={props.recipe.notes}
+        course={props.recipe.course}
+        vegetarian={props.recipe.vegeterian}
+        serves={props.recipe.serves}
+        author={props.recipe.author}
+      />
+      <Footer />
+    </Fragment>
   );
 };
 

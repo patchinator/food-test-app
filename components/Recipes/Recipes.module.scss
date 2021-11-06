@@ -1,11 +1,16 @@
+@import "../../styles/theme.scss";
+
 .container {
   padding: 0;
   display: flex;
   justify-content: center;
 
   .layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    min-height: 30rem;
   }
 }
 
@@ -14,4 +19,53 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+}
+
+.filter_card_wrapper {
+  display: flex;
+  justify-content: center;
+
+  .filter_card {
+    margin-top: 2rem;
+    background: $theme_secondary;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: 1rem;
+
+    form {
+      display: flex;
+
+      input {
+        padding: 1rem;
+        border: none;
+        font-size: 20px;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        color: black;
+
+        &:focus::placeholder {
+          color: transparent;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        font-size: 16px;
+        background: $theme_primary;
+        border: none;
+        padding: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-top-right-radius: 1rem;
+        cursor: pointer;
+        border-left: 1px solid $border_color;
+
+        &:hover {
+          background: white;
+        }
+      }
+    }
+  }
 }

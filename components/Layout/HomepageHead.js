@@ -1,17 +1,12 @@
-import image from "../../components/Assets/header-image.jpg";
-import Image from "next/image";
-import { Fragment } from "react";
-import Head from "next/head";
 import { motion } from "framer-motion";
+
+import HomepageBackground from "./HomepageBackground";
 
 import style from "./HomepageHead.module.scss";
 
 const HomepageHead = () => {
   return (
-    <Fragment>
-      <div className={style.head}>
-        <Image className={style.image} src={image} alt="" objectFit="cover" />
-      </div>
+    <HomepageBackground>
       <motion.div
         className={style.head_card}
         initial="hidden"
@@ -50,16 +45,8 @@ const HomepageHead = () => {
           </div>
         </div>
       </motion.div>
-
-      <div className={style.info_card}>
-        <div>
-          <p>Recipe Library allows you to document your own recipes.</p>
-          <p>Simply create a recipe to add it to the recipe library.</p>
-          <p>Leave a review on any recipe you tried out!</p>
-          <p>Happy Cooking!</p>
-        </div>
-      </div>
-    </Fragment>
+      <div className={style.style_banner}></div>
+    </HomepageBackground>
   );
 };
 

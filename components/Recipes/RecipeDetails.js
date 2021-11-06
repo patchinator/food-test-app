@@ -9,6 +9,7 @@ import {
   faUtensils,
   faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
+import ButtonTwo from "../UI/ButtonTwo";
 import Button from "../UI/Button";
 
 const RecipeDetails = (props) => {
@@ -49,7 +50,7 @@ const RecipeDetails = (props) => {
               <div className={style.author}>
                 <FontAwesomeIcon width="1.5rem" icon={faUser} />
                 <h5>Author:</h5>
-                <p>TODO</p>
+                <p>{props.author}</p>
               </div>
               <div className={style.course}>
                 <FontAwesomeIcon width="1.5rem" icon={faUtensils} />
@@ -83,25 +84,28 @@ const RecipeDetails = (props) => {
             </ul>
           </div>
         </div>
-      </div>
-
-      <div className={style.details_right}>
-        <h2>Recipe</h2>
-        <div className={style.recipe_steps}>
-          <ul>
-            {props.description.split(".").map((step) => (
-              <li key={step}>{step}</li>
-            ))}
-          </ul>
-        </div>
         <div className={style.notes}>
           <h2>Notes</h2>
           <p>{props.notes}</p>
         </div>
-        <div className={style.back_button}>
+      </div>
+
+      <div className={style.details_right}>
+        <div className={style.recipe_back}>
           <Link href="/" passHref>
-            <Button>Back</Button>
+            <ButtonTwo>Back to recipes</ButtonTwo>
           </Link>
+        </div>
+        <div className={style.recipe_header}>
+          <h2>Recipe</h2>
+        </div>
+        <div className={style.recipe_steps}>
+          <ul>
+            {props.description
+              .split(".")
+              .map((step) => <li key={step}>{step}</li>)
+              .slice(0, -1)}
+          </ul>
         </div>
       </div>
     </div>

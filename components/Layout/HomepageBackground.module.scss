@@ -1,0 +1,10 @@
+.background {
+  background-image: url("../Assets/header-background.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}

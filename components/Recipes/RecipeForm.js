@@ -3,6 +3,7 @@ import { useRef, useContext } from "react";
 import { useRouter } from "next/dist/client/router";
 import AuthContext from "../../store/auth-context";
 import Button from "../UI/Button";
+import Link from "next/link";
 
 const RecipeForm = (props) => {
   const router = useRouter();
@@ -204,6 +205,9 @@ const RecipeForm = (props) => {
           </div>
           <div className={style.form_buttons}>
             <Button>Create Recipe</Button>
+            <Button type="button">
+              <Link href="/">Back</Link>
+            </Button>
           </div>
         </form>
       </div>
