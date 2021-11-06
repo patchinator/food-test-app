@@ -4,13 +4,18 @@
   margin: auto;
   padding: 1rem;
   background: rgb(149, 206, 92);
-  max-width: 40rem;
+  width: 25%;
   border-radius: 12px;
   font-size: 18px;
+  position: absolute;
+  top: 20%;
+  right: 20%;
 }
 
 .form_header {
   text-align: center;
+  margin: 0;
+  padding: 1rem;
 }
 
 .form_components {
