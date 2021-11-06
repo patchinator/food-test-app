@@ -1,27 +1,9 @@
-import style from "./RecipeItem.module.css";
-import { faStar, faTrash, faFileAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Fragment, useState } from "react";
+import style from "./RecipeItem.module.scss";
+import { Fragment } from "react";
 
 import { motion } from "framer-motion";
-import Modal from "../../components/UI/Modal";
 
 const RecipeItem = (props) => {
-  const deleteRecipeHandler = () => {
-    fetch(
-      `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes/${props.id}.json`,
-      {
-        method: "DELETE",
-      }
-    ).then((res) => {
-      if (res.ok) {
-        props.onRefresh();
-      } else {
-        alert("Delete failed");
-      }
-    });
-  };
-
   return (
     <Fragment>
       <motion.li
@@ -44,16 +26,6 @@ const RecipeItem = (props) => {
           <img src={props.image} alt={props.title} />
         </div>
       </motion.li>
-      {props.modal && (
-        <Modal
-          title={props.title}
-          description={props.description}
-          time={props.time}
-          difficulty={props.difficulty}
-          onCloseModal={props.onCloseModal}
-          onDeleteRecipe={deleteRecipeHandler}
-        />
-      )}
     </Fragment>
   );
 };

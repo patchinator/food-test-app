@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import style from "./ProfileForm.module.css";
+import style from "./ProfileForm.module.scss";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 
@@ -7,6 +7,23 @@ const ProfileForm = () => {
   const authCtx = useContext(AuthContext);
 
   const updatedPasswordRef = useRef();
+
+  // TODO --> remove recipes that you've created from a list in your profile page
+
+  // const deleteRecipeHandler = () => {
+  //   fetch(
+  //     `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes/${props.id}.json`,
+  //     {
+  //       method: "DELETE",
+  //     }
+  //   ).then((res) => {
+  //     if (res.ok) {
+  //       props.onRefresh();
+  //     } else {
+  //       alert("Delete failed");
+  //     }
+  //   });
+  // };
 
   const submitHandler = (event) => {
     event.preventDefault();
