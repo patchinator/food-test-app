@@ -9,11 +9,16 @@ import ButtonTwo from "../UI/ButtonTwo";
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+
+  // refs
   const enteredEmailRef = useRef();
   const enteredPasswordRef = useRef();
-  const router = useRouter();
+  const enteredDisplayNameRef = useRef();
 
+  const router = useRouter();
   const authCtx = useContext(AuthContext);
+
+  console.log(authCtx);
 
   const authModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -31,47 +36,77 @@ const AuthForm = () => {
     let url;
     if (isLogin) {
       url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.NEXT_PUBLIC_FIREBASE_KEY}`;
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify({
+          email: enteredEmail,
+          password: enteredPassword,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          setIsLoading(false);
+          if (res.ok) {
+            return res.json();
+          } else {
+            return res.json().then((data) => {
+              let errorMessage = "Authentication Failed";
+              if (data && data.error && data.error.message) {
+                errorMessage = data.error.message;
+              }
+              // TODO create error modal
+              throw new Error(errorMessage);
+            });
+          }
+        })
+        .then((data) => {
+          authCtx.login(data.idToken, data.displayName);
+          router.push("/");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
     } else {
+      const enteredDisplayName = enteredDisplayNameRef.current.value;
       url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.NEXT_PUBLIC_FIREBASE_KEY}`;
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify({
+          email: enteredEmail,
+          password: enteredPassword,
+          displayName: enteredDisplayName,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          setIsLoading(false);
+          if (res.ok) {
+            return res.json();
+          } else {
+            return res.json().then((data) => {
+              let errorMessage = "Authentication Failed";
+              if (data && data.error && data.error.message) {
+                errorMessage = data.error.message;
+              }
+              // TODO create error modal
+              throw new Error(errorMessage);
+            });
+          }
+        })
+        .then((data) => {
+          authCtx.login(data.idToken);
+          router.push("/");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
     }
-    fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
-        email: enteredEmail,
-        password: enteredPassword,
-        returnSecureToken: true,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        setIsLoading(false);
-        if (res.ok) {
-          // if the response is successful
-          return res.json();
-        } else {
-          // if the response fails
-          return res.json().then((data) => {
-            let errorMessage = "Authentication Failed";
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
-            }
-            // TODO create error modal
-            throw new Error(errorMessage);
-          });
-        }
-      })
-      .then((data) => {
-        // successful request
-        authCtx.login(data.idToken);
-        // data.idToken is token recieved from firebase, pass it
-        router.push("/");
-        // push user to homepage on login success
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
   };
 
   return (
@@ -79,6 +114,12 @@ const AuthForm = () => {
       <h2 className={style.form_header}>
         {isLogin ? "Login" : "Create new Account"}
       </h2>
+      {!isLogin && (
+        <div className={style.form_components}>
+          <label htmlFor="displayName">Create Username</label>
+          <input type="text" id="displayName" ref={enteredDisplayNameRef} />
+        </div>
+      )}
       <div className={style.form_components}>
         <label htmlFor="email">
           {isLogin ? "Enter email" : "Enter new email"}

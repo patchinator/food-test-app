@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 
 const AuthContext = React.createContext({
   token: "",
+  displayName: "",
   isLoggedIn: false,
   login: (token) => {},
   logout: () => {},
@@ -11,38 +12,39 @@ const AuthContext = React.createContext({
 
 export const AuthContextProvider = (props) => {
   const router = useRouter();
-  // Because NextJS is serverside + clientside, conditional to check if on server
-  // before accessing localstorage
+
   const getLocalStorageToken = () => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("token");
+      localStorage.getItem("token");
+      localStorage.getItem("displayName");
     } else {
       return null;
     }
   };
 
-  // if token, user is logged in, if no token, user not logged in
   const [token, setToken] = useState(getLocalStorageToken);
+  const [displayName, setDisplayName] = useState(getLocalStorageToken);
 
   const userLoggedIn = !!token;
 
-  const loginHandler = (token) => {
-    // store token in local storage
-    localStorage.setItem("token", token);
-    // sets token to the token being received
+  const loginHandler = (token, displayName) => {
     setToken(token);
+    setDisplayName(displayName);
+
+    localStorage.setItem("token", token);
+    localStorage.setItem("displayName", displayName);
   };
   const logoutHandler = () => {
-    // removes token on logout
     setToken(null);
-    // removes token from local storage
+
     localStorage.removeItem("token");
-    router.push("/")
+    router.push("/");
   };
 
   const contextValue = {
     token: token,
     isLoggedIn: userLoggedIn,
+    displayName: displayName,
     login: loginHandler,
     logout: logoutHandler,
   };
