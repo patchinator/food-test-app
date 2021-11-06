@@ -4,17 +4,11 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-import style from "./HomepageHead.module.css";
+import style from "./HomepageHead.module.scss";
 
 const HomepageHead = () => {
   return (
     <Fragment>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Head>
       <div className={style.head}>
         <Image className={style.image} src={image} alt="" objectFit="cover" />
       </div>
