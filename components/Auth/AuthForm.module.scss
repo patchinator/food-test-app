@@ -35,6 +35,7 @@
       height: 1.5rem;
       border-radius: 1rem;
       border: none;
+      font-size: 16px;
     }
   }
 
@@ -42,11 +43,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .form_back {
-    margin-top: 1rem;
-    text-align: center;
-    transition: 120ms ease-in;
+    .button {
+      margin-bottom: 1rem;
+    }
   }
 }

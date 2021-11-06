@@ -100,14 +100,18 @@ const AuthForm = () => {
       </div>
       <div className={style.form_buttons}>
         {!isLoading && (
-          <ButtonTwo>{isLogin ? "Login" : "Create Account"}</ButtonTwo>
+          <ButtonTwo className={style.button}>
+            {isLogin ? "Login" : "Create Account"}
+          </ButtonTwo>
         )}
         {isLoading && <p>Sending...</p>}
-        <ButtonTwo type="button" onClick={authModeHandler}>
+        <ButtonTwo
+          className={style.button}
+          type="button"
+          onClick={authModeHandler}
+        >
           {isLogin ? "Create new Account" : "Login with existing Account"}
         </ButtonTwo>
-      </div>
-      <div className={style.form_back}>
         <ButtonTwo>
           <Link href="/">Back</Link>
         </ButtonTwo>
