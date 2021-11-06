@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Link from "next/link";
 
-import style from "./Navbar.module.css";
+import style from "./Navbar.module.scss";
 import AuthContext from "../../store/auth-context";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className={style.navbar}>
+    <nav className={style.navbar}>
       <div className={style.logo}>
         <h2>
           <Link href="/">Recipe Library</Link>
@@ -38,12 +38,12 @@ const Navbar = () => {
           )}
           {isLoggedIn && (
             <li>
-              <button onClick={logoutHandler}>Logout</button>
+              <p onClick={logoutHandler}>Logout</p>
             </li>
           )}
         </ul>
       </div>
-    </header>
+    </nav>
   );
 };
 
