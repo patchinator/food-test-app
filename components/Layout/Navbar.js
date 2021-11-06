@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import style from "./Navbar.module.scss";
 import AuthContext from "../../store/auth-context";
+import ButtonTwo from "../UI/ButtonTwo";
 
 const Navbar = () => {
   const authCtx = useContext(AuthContext);
@@ -18,30 +19,28 @@ const Navbar = () => {
           <Link href="/">Recipe Library</Link>
         </h2>
       </div>
-      <div>
-        <ul className={style.navigation_list}>
-          <li>
-            <Link href="/">Recipes</Link>
-          </li>
-          <li>
-            <Link href="/profile/create-recipe">Create Recipe</Link>
-          </li>
-          {isLoggedIn && (
-            <li>
-              <Link href="/profile/update-password">Profile</Link>
-            </li>
-          )}
-          {!isLoggedIn && (
-            <li>
-              <Link href="/auth/log-in">Login</Link>
-            </li>
-          )}
-          {isLoggedIn && (
-            <li>
-              <p onClick={logoutHandler}>Logout</p>
-            </li>
-          )}
-        </ul>
+      <div className={style.navigation_list}>
+        <ButtonTwo className={style.button}>
+          <Link href="/">Recipes</Link>
+        </ButtonTwo>
+        <ButtonTwo className={style.button}>
+          <Link href="/profile/create-recipe">Create Recipe</Link>
+        </ButtonTwo>
+        {isLoggedIn && (
+          <ButtonTwo className={style.button}>
+            <Link href="/profile/update-password">Profile</Link>
+          </ButtonTwo>
+        )}
+        {!isLoggedIn && (
+          <ButtonTwo className={style.button}>
+            <Link href="/auth/log-in">Login</Link>
+          </ButtonTwo>
+        )}
+        {isLoggedIn && (
+          <ButtonTwo className={style.button}>
+            <p onClick={logoutHandler}>Logout</p>
+          </ButtonTwo>
+        )}
       </div>
     </nav>
   );
