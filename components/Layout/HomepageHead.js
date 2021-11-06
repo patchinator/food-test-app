@@ -45,15 +45,6 @@ const HomepageHead = () => {
           </div>
         </div>
       </motion.div>
-
-      <div className={style.info_card}>
-        <div>
-          <p>Recipe Library allows you to document your own recipes.</p>
-          <p>Simply create a recipe to add it to the recipe library.</p>
-          <p>Leave a review on any recipe you tried out!</p>
-          <p>Happy Cooking!</p>
-        </div>
-      </div>
     </HomepageBackground>
   );
 };
