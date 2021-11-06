@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import RecipeItem from "./RecipeItem";
 import style from "./Recipes.module.scss";
 import Link from "next/link";
-import Button from "../UI/Button";
+import ButtonTwo from "../UI/ButtonTwo";
 
 const Recipes = (props) => {
   const [librarySize, setLibrarySize] = useState(12);
@@ -41,7 +41,7 @@ const Recipes = (props) => {
       </ul>
 
       <div className={style.show_more}>
-        <Button onClick={showMoreRecipesHandler}>Show more</Button>
+        <ButtonTwo onClick={showMoreRecipesHandler}>Show more</ButtonTwo>
       </div>
     </Fragment>
   );
