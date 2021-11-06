@@ -18,8 +18,6 @@ const AuthForm = () => {
   const router = useRouter();
   const authCtx = useContext(AuthContext);
 
-  console.log(authCtx);
-
   const authModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
