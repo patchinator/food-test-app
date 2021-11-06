@@ -16,6 +16,7 @@ const Details = (props) => {
         course={props.recipe.course}
         vegetarian={props.recipe.vegeterian}
         serves={props.recipe.serves}
+        author={props.recipe.author}
       />
       <Footer />
     </Fragment>
