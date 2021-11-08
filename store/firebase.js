@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_KEY,
+  apiKey: "AIzaSyCRN-bdOXYBhvmn76g3QcjL9jYAWXFYHHs",
   authDomain: "auth-cce8a.firebaseapp.com",
   databaseURL:
     "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app",
@@ -13,8 +13,9 @@ const firebaseConfig = {
   measurementId: "G-ZWKKLT3R7L",
 };
 
-firebase.initializeApp(firebaseConfig);
-
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 const storage = firebase.storage();
 
 export { storage, firebase as default };
