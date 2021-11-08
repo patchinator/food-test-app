@@ -16,7 +16,6 @@ const RecipeForm = (props) => {
   const imageInputRef = useRef();
   const descriptionInputRef = useRef();
   const ingredientsInputRef = useRef();
-
   const vegeterianInputRef = useRef();
   const servesInputRef = useRef();
   const courseInputRef = useRef();
@@ -31,7 +30,6 @@ const RecipeForm = (props) => {
     const enteredImage = imageInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
     const enteredIngredients = ingredientsInputRef.current.value;
-
     const enteredVegeterian = vegeterianInputRef.current.value;
     const enteredServes = servesInputRef.current.value;
     const enteredCourse = courseInputRef.current.value;
@@ -67,7 +65,12 @@ const RecipeForm = (props) => {
           <div className={style.create_recipe_top}>
             <div className={style.recipe_title}>
               <label htmlFor="title">Title</label>
-              <input id="title" type="text" ref={titleInputRef}></input>
+              <input
+                required
+                id="title"
+                type="text"
+                ref={titleInputRef}
+              ></input>
             </div>
             <div className={style.recipe_difficulty}>
               <label htmlFor="difficulty">Difficulty</label>
@@ -86,7 +89,12 @@ const RecipeForm = (props) => {
             </div>
             <div className={style.recipe_prep}>
               <label htmlFor="prepTime">Preparation Time (mins)</label>
-              <input id="prepTime" type="number" ref={prepTimeInputRef}></input>
+              <input
+                required
+                id="prepTime"
+                type="number"
+                ref={prepTimeInputRef}
+              ></input>
             </div>
             <div className={style.recipe_image}>
               <label htmlFor="image">Image</label>
@@ -100,6 +108,7 @@ const RecipeForm = (props) => {
               <div>
                 <div>
                   <input
+                    required
                     ref={vegeterianInputRef}
                     id="vegetarian"
                     type="checkbox"
@@ -155,7 +164,12 @@ const RecipeForm = (props) => {
             </div>
             <div className={style.recipe_serves}>
               <label htmlFor="serves">How many people does it serve?</label>
-              <input id="serves" type="number" ref={servesInputRef}></input>
+              <input
+                required
+                id="serves"
+                type="number"
+                ref={servesInputRef}
+              ></input>
             </div>
           </div>
 
@@ -167,6 +181,7 @@ const RecipeForm = (props) => {
                 seperate each step with a full stop.
               </p>
               <textarea
+                required
                 name="description"
                 id="description"
                 rows="15"
@@ -181,6 +196,7 @@ const RecipeForm = (props) => {
                   ingredient with a comma.
                 </p>
                 <input
+                  required
                   id="ingredients"
                   type="text"
                   ref={ingredientsInputRef}
