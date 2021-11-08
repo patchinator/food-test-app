@@ -58,6 +58,7 @@
           font-size: 18px;
           width: 75%;
           text-align: center;
+          margin: 1px;
 
           &:hover {
             background: $theme_secondary;
@@ -74,6 +75,7 @@
       .create_recipe_top {
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 1rem;
         margin-bottom: 1rem;
 
@@ -82,7 +84,6 @@
         .recipe_difficulty {
           padding: 1rem;
           text-align: center;
-          flex: 33.3%;
 
           input,
           select {
@@ -95,6 +96,12 @@
             background: $theme_primary;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
           }
+        }
+
+        .recipe_difficulty {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
       }
 
