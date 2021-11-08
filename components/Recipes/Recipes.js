@@ -10,6 +10,8 @@ const Recipes = (props) => {
   const [searchRecipe, setSearchRecipe] = useState("");
   const formRef = useRef();
 
+  const recipeArr = [];
+
   const showMoreRecipesHandler = () => {
     const newSize = librarySize + 8;
     setLibrarySize(newSize);
@@ -50,6 +52,7 @@ const Recipes = (props) => {
               } else if (
                 value.title.toLowerCase().includes(searchRecipe.toLowerCase())
               ) {
+                recipeArr.push(value);
                 return value;
               }
             })
@@ -73,6 +76,9 @@ const Recipes = (props) => {
                 </a>
               </Link>
             ))}
+          {recipeArr.length === 0 && searchRecipe !== "" && (
+            <p className={style.filter_message}>no results found.</p>
+          )}
         </div>
       </ul>
 
