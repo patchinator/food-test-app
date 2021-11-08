@@ -55,13 +55,7 @@ export default function Home() {
       </Head>
       <Layout>
         <HomepageHead />
-        <Recipes
-          library={library}
-          onRefresh={refreshLibraryHandler}
-          onOpenModal={showRecipeModal}
-          onCloseModal={hideRecipeModal}
-          modal={showModal}
-        />
+        <Recipes library={library} onRefresh={refreshLibraryHandler} />
         <Footer />
       </Layout>
     </Fragment>
