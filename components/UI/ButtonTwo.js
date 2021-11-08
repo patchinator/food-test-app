@@ -6,6 +6,7 @@ const ButtonTwo = (props) => {
       onClick={props.onClick}
       className={`${style.button} ${props.className}`}
       type={props.type}
+      style={{ pointerEvents: props.pointerEvents }}
     >
       {props.children}
     </button>

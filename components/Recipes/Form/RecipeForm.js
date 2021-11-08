@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import { storage } from "../../../store/firebase";
 
-const RecipeForm = (props) => {
+const RecipeForm = () => {
   const router = useRouter();
   const authCtx = useContext(AuthContext);
 
@@ -18,17 +18,12 @@ const RecipeForm = (props) => {
   const titleInputRef = useRef();
   const difficultyInputRef = useRef();
   const prepTimeInputRef = useRef();
-
-  const imageInputRef = useRef();
-
   const descriptionInputRef = useRef();
   const ingredientsInputRef = useRef();
   const vegeterianInputRef = useRef();
   const servesInputRef = useRef();
   const courseInputRef = useRef();
   const notesInputRef = useRef();
-
-  console.log(imageAsFile);
 
   const uploadImageHandler = (event) => {
     if (event.target.files[0]) {
@@ -68,37 +63,9 @@ const RecipeForm = (props) => {
   const submitRecipeHandler = (event) => {
     event.preventDefault();
 
-    // if (imageAsFile === "") {
-    //   console.error(`not an image, the image file is a ${typeof imageAsFile}`);
-    // }
-
-    // const uploadTask = storage
-    //   .ref(`/images/${imageAsFile.name}`)
-    //   .put(imageAsFile);
-
-    // uploadTask.on(
-    //   "state_changed",
-    //   (snapshot) => {},
-    //   (error) => {
-    //     console.log(error);
-    //   },
-    //   () => {
-    //     storage
-    //       .ref("images")
-    //       .child(imageAsFile.name)
-    //       .getDownloadURL()
-    //       .then((url) => {
-    //         setImageAsUrl(url);
-    //       });
-    //   }
-    // );
-
     const enteredTitle = titleInputRef.current.value;
     const enteredDifficulty = difficultyInputRef.current.value;
     const enteredTime = prepTimeInputRef.current.value;
-
-    const enteredImage = imageInputRef.current.value;
-
     const enteredDescription = descriptionInputRef.current.value;
     const enteredIngredients = ingredientsInputRef.current.value;
     const enteredVegeterian = vegeterianInputRef.current.value;
@@ -130,22 +97,32 @@ const RecipeForm = (props) => {
   return (
     <div className={style.create_recipe_container}>
       <div className={style.create_recipe}>
-        <form onSubmit={submitImageHandler}>
-          <div className={style.recipe_image}>
-            <label htmlFor="image">Image</label>
-            <input
-              id="image"
-              type="file"
-              ref={imageInputRef}
-              onChange={uploadImageHandler}
-            />
+        <form className={style.image_upload} onSubmit={submitImageHandler}>
+          <div>
+            <h1 className={style.form_header}>Create new Recipe</h1>
+            <div className={style.recipe_image}>
+              <label
+                className={imageAsUrl && style.successful_upload}
+                htmlFor="image"
+              >
+                Upload an image
+              </label>
+              <div>
+                <input
+                  className={style.file_input}
+                  id="image"
+                  type="file"
+                  onChange={uploadImageHandler}
+                />
+                {!imageAsUrl && <ButtonTwo>upload</ButtonTwo>}
+                {imageAsUrl && (
+                  <ButtonTwo pointerEvents="none">uploaded</ButtonTwo>
+                )}
+              </div>
+            </div>
           </div>
-          <button>upload</button>
         </form>
-
         <form onSubmit={submitRecipeHandler} className={style.form}>
-          <h1 className={style.form_header}>Create new Recipe</h1>
-
           <div className={style.create_recipe_top}>
             <div className={style.recipe_title}>
               <label htmlFor="title">Title</label>
@@ -180,15 +157,6 @@ const RecipeForm = (props) => {
                 ref={prepTimeInputRef}
               ></input>
             </div>
-            {/* <div className={style.recipe_image}>
-              <label htmlFor="image">Image</label>
-              <input
-                id="image"
-                type="file"
-                ref={imageInputRef}
-                onChange={uploadImageHandler}
-              />
-            </div> */}
           </div>
 
           <div className={style.recipe_middle}>

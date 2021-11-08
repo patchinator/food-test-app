@@ -10,8 +10,61 @@
   .create_recipe {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 50%;
     font-size: 20px;
+
+    .image_upload {
+      display: flex;
+      justify-content: center;
+
+      .recipe_image {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          display: flex;
+          justify-content: center;
+        }
+
+        .file_input {
+          font-size: inherit;
+          font-family: inherit;
+          width: 0.1px;
+          height: 0.1px;
+          opacity: 0;
+          overflow: hidden;
+          position: absolute;
+          z-index: -1;
+        }
+
+        .successful_upload {
+          background-color: $theme_primary;
+          transition: 80ms ease-in;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          font-size: 18px;
+          width: 75%;
+          text-align: center;
+          border: 1px solid greenyellow;
+          pointer-events: none;
+        }
+
+        label {
+          background-color: $theme_primary;
+          transition: 80ms ease-in;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          font-size: 18px;
+          width: 75%;
+          text-align: center;
+
+          &:hover {
+            background: $theme_secondary;
+          }
+        }
+      }
+    }
 
     form {
       h1 {
@@ -20,15 +73,16 @@
 
       .create_recipe_top {
         display: flex;
+        align-items: center;
         padding: 1rem;
         margin-bottom: 1rem;
 
         .recipe_title,
         .recipe_prep,
-        .recipe_difficulty,
-        .recipe_image {
-          padding: 0.5rem;
+        .recipe_difficulty {
+          padding: 1rem;
           text-align: center;
+          flex: 33.3%;
 
           input,
           select {
