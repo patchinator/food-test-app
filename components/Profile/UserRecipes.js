@@ -1,8 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import style from "./UserRecipes.module.scss";
-import Link from "next/link";
-import ButtonTwo from "../UI/ButtonTwo";
 
 const UserRecipes = () => {
   const authCtx = useContext(AuthContext);
