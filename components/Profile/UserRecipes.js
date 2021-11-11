@@ -1,6 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import style from "./UserRecipes.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const UserRecipes = () => {
   const authCtx = useContext(AuthContext);
@@ -28,17 +30,28 @@ const UserRecipes = () => {
     );
   }, [authCtx.displayName]);
 
+  console.log(recipes);
+
   return (
-    <div>
-      {recipes.map((recipe) => (
-        <li key={recipe.id} className={style.recipe}>
-          <div>{recipe.title}</div>
-          <div className={style.image}>
-            <img src={recipe.image} alt={recipe.title} />
-          </div>
-        </li>
-      ))}
-    </div>
+    <section className>
+      <div className={style.recipe_container}>
+        <div className={style.recipe_wrapper}>
+          <div
+            className={style.recipe_list_title}
+          >{`${authCtx.displayName}'s recipes`}</div>
+          {recipes.length !== 0 &&
+            recipes.map((recipe) => (
+              <div key={recipe.id} className={style.recipe}>
+                <div className={style.title}>{recipe.title}</div>
+                <div className={style.image}>
+                  <img src={recipe.image} alt={recipe.title} />
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+      {recipes.length === 0 && <p>No recipes created</p>}
+    </section>
   );
 };
 

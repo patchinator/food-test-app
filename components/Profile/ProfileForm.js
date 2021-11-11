@@ -4,50 +4,7 @@ import AuthContext from "../../store/auth-context";
 
 const ProfileForm = () => {
   const authCtx = useContext(AuthContext);
-  // const [recipes, setRecipes] = useState();
-
   const updatedPasswordRef = useRef();
-
-  // TODO --> remove recipes that you've created from a list in your profile page
-
-  // const deleteRecipeHandler = () => {
-  //   fetch(
-  //     `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes/${props.id}.json`,
-  //     {
-  //       method: "DELETE",
-  //     }
-  //   ).then((res) => {
-  //     if (res.ok) {
-  //       props.onRefresh();
-  //     } else {
-  //       alert("Delete failed");
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   fetch(
-  //     "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json"
-  //   ).then((res) =>
-  //     res
-  //       .json()
-  //       .then((data) => {
-  //         const loadedRecipes = [];
-  //         for (const key in data) {
-  //           if (data[key].author === authCtx.displayName)
-  //             loadedRecipes.push({
-  //               title: data[key].title,
-  //               image: data[key].image,
-  //               id: key,
-  //             });
-  //         }
-  //         setRecipes(loadedRecipes);
-  //       })
-  //       .catch((err) => alert(`${err}`))
-  //   );
-  // }, [authCtx.displayName]);
-
-  // console.log(recipes);
 
   const submitHandler = (event) => {
     event.preventDefault();
