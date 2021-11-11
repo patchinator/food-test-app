@@ -1,0 +1,17 @@
+.recipe {
+  background: rgb(200, 200, 255);
+  padding: 0.5rem;
+  list-style: none;
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+
+  .image {
+    img {
+      width: 8rem;
+      height: 4.5rem;
+    }
+  }
+}

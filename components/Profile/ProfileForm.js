@@ -1,10 +1,10 @@
-import { useRef } from "react";
-import style from "./ProfileForm.module.scss";
+import { useRef, useEffect, useState } from "react";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 
 const ProfileForm = () => {
   const authCtx = useContext(AuthContext);
+  // const [recipes, setRecipes] = useState();
 
   const updatedPasswordRef = useRef();
 
@@ -24,6 +24,30 @@ const ProfileForm = () => {
   //     }
   //   });
   // };
+
+  // useEffect(() => {
+  //   fetch(
+  //     "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json"
+  //   ).then((res) =>
+  //     res
+  //       .json()
+  //       .then((data) => {
+  //         const loadedRecipes = [];
+  //         for (const key in data) {
+  //           if (data[key].author === authCtx.displayName)
+  //             loadedRecipes.push({
+  //               title: data[key].title,
+  //               image: data[key].image,
+  //               id: key,
+  //             });
+  //         }
+  //         setRecipes(loadedRecipes);
+  //       })
+  //       .catch((err) => alert(`${err}`))
+  //   );
+  // }, [authCtx.displayName]);
+
+  // console.log(recipes);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -54,7 +78,6 @@ const ProfileForm = () => {
           if (data && data.error && data.error.message) {
             errorMessage = data.error.message;
           }
-          // TODO create error modal
           throw new Error(errorMessage);
         });
       }
