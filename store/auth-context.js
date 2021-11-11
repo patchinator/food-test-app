@@ -17,8 +17,6 @@ export const AuthContextProvider = (props) => {
   if (typeof window !== "undefined") {
     initialToken = localStorage.getItem("token");
     initialDisplayName = localStorage.getItem("displayName");
-  } else {
-    return null;
   }
 
   const [token, setToken] = useState(initialToken);
@@ -37,6 +35,7 @@ export const AuthContextProvider = (props) => {
     setToken(null);
 
     localStorage.removeItem("token");
+    localStorage.removeItem("DisplayName");
     router.push("/");
   };
 
