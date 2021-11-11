@@ -252,12 +252,14 @@ const RecipeForm = () => {
                   List all the ingredients (and measurements)! Seperate each
                   ingredient with a comma.
                 </p>
-                <input
+
+                <textarea
                   required
+                  name="ingredients"
                   id="ingredients"
-                  type="text"
+                  rows="15"
                   ref={ingredientsInputRef}
-                ></input>
+                ></textarea>
               </div>
               <div className={style.recipe_notes}>
                 <label htmlFor="notes">Additional Notes (optional)</label>

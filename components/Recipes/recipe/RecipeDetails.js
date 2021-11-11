@@ -20,7 +20,9 @@ const RecipeDetails = (props) => {
           <div className={style.detials_theme}>
             <div className={style.details_image_wrapper}>
               <div className={style.details_image}>
-                <img src={props.image} alt={props.title} />
+                <div className={style.image_shadow}>
+                  <img src={props.image} alt={props.title} />
+                </div>
               </div>
             </div>
             <div className={style.details_header}>
