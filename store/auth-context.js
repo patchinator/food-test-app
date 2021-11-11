@@ -1,5 +1,5 @@
-import { useState } from "react";
 import React from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 
 const AuthContext = React.createContext({
@@ -11,19 +11,18 @@ const AuthContext = React.createContext({
 });
 
 export const AuthContextProvider = (props) => {
+  let initialToken, initialDisplayName;
   const router = useRouter();
 
-  const getLocalStorageToken = () => {
-    if (typeof window !== "undefined") {
-      localStorage.getItem("token");
-      localStorage.getItem("displayName");
-    } else {
-      return null;
-    }
-  };
+  if (typeof window !== "undefined") {
+    initialToken = localStorage.getItem("token");
+    initialDisplayName = localStorage.getItem("displayName");
+  } else {
+    return null;
+  }
 
-  const [token, setToken] = useState(getLocalStorageToken);
-  const [displayName, setDisplayName] = useState(getLocalStorageToken);
+  const [token, setToken] = useState(initialToken);
+  const [displayName, setDisplayName] = useState(initialDisplayName);
 
   const userLoggedIn = !!token;
 
