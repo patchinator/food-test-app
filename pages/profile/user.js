@@ -1,15 +1,25 @@
 import ProfileForm from "../../components/Profile/ProfileForm";
-import { Fragment } from "react";
+
 import UserRecipes from "../../components/Profile/UserRecipes";
+
 import ProfileBackground from "../../components/Profile/ProfileBackground";
+import ButtonTwo from "../../components/UI/ButtonTwo";
+import Link from "next/link";
+import style from "./user.module.scss";
 
 export default function UpdatePassword(props) {
   return (
-    <Fragment>
-      <ProfileBackground>
-        <UserRecipes />
-        <ProfileForm />
-      </ProfileBackground>
-    </Fragment>
+    <ProfileBackground>
+      {/* <UserRecipes /> */}
+      <ProfileForm />
+      <div className={style.back}></div>
+      <div className={style.button}>
+        <Link href="/">
+          <a>
+            <ButtonTwo>Back</ButtonTwo>
+          </a>
+        </Link>
+      </div>
+    </ProfileBackground>
   );
 }

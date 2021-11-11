@@ -39,23 +39,18 @@ const UserRecipes = () => {
           <div
             className={style.recipe_list_title}
           >{`${authCtx.displayName}'s recipes`}</div>
-          {recipes.length !== 0 &&
-            recipes.map((recipe) => (
-              <div key={recipe.id} className={style.recipe}>
-                <div className={style.title}>{recipe.title}</div>
-                <div className={style.image}>
-                  <img src={recipe.image} alt={recipe.title} />
-                </div>
+
+          {recipes.map((recipe) => (
+            <div key={recipe.id} className={style.recipe}>
+              <div className={style.title}>{recipe.title}</div>
+              <div className={style.image}>
+                <img src={recipe.image} alt={recipe.title} />
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
-      {recipes.length === 0 && <p>No recipes created</p>}
-      <div className={style.back}>
-        <Link href="/">
-          <ButtonTwo>Back</ButtonTwo>
-        </Link>
-      </div>
+      <p>No recipes created</p>
     </section>
   );
 };
