@@ -83,11 +83,9 @@ const Recipes = (props) => {
         </div>
       </ul>
 
-      {librarySize > 12 && (
-        <div className={style.show_more}>
-          <ButtonTwo onClick={showMoreRecipesHandler}>Show more</ButtonTwo>
-        </div>
-      )}
+      <div className={style.show_more}>
+        <ButtonTwo onClick={showMoreRecipesHandler}>Show more</ButtonTwo>
+      </div>
     </Fragment>
   );
 };
