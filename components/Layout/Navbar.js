@@ -30,7 +30,7 @@ const Navbar = () => {
         </ButtonTwo>
         {isLoggedIn && (
           <ButtonTwo className={style.button}>
-            <Link href="/profile/update-password">Profile</Link>
+            <Link href="/profile/user">Profile</Link>
           </ButtonTwo>
         )}
         {!isLoggedIn && (

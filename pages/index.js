@@ -33,6 +33,7 @@ export default function Home() {
               difficulty: data[key].difficulty,
               time: data[key].time,
               description: data[key].description,
+              vegeterian: data[key].vegeterian,
               id: key,
             });
           }
@@ -55,13 +56,7 @@ export default function Home() {
       </Head>
       <Layout>
         <HomepageHead />
-        <Recipes
-          library={library}
-          onRefresh={refreshLibraryHandler}
-          onOpenModal={showRecipeModal}
-          onCloseModal={hideRecipeModal}
-          modal={showModal}
-        />
+        <Recipes library={library} onRefresh={refreshLibraryHandler} />
         <Footer />
       </Layout>
     </Fragment>
