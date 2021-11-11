@@ -11,19 +11,28 @@ const RecipeForm = () => {
   const router = useRouter();
   const authCtx = useContext(AuthContext);
 
+  // states for form
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState("");
+  const [isVegeterian, setIsVegeterian] = useState();
+  const [courseType, setCourseType] = useState();
 
-  // refs
+  // refs for form
   const titleInputRef = useRef();
   const difficultyInputRef = useRef();
   const prepTimeInputRef = useRef();
   const descriptionInputRef = useRef();
   const ingredientsInputRef = useRef();
-  const vegeterianInputRef = useRef();
   const servesInputRef = useRef();
-  const courseInputRef = useRef();
   const notesInputRef = useRef();
+
+  const vegeterianHandler = (event) => {
+    setIsVegeterian(event.target.value);
+  };
+
+  const courseHandler = (event) => {
+    setCourseType(event.target.value);
+  };
 
   const uploadImageHandler = (event) => {
     if (event.target.files[0]) {
@@ -68,9 +77,7 @@ const RecipeForm = () => {
     const enteredTime = prepTimeInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
     const enteredIngredients = ingredientsInputRef.current.value;
-    const enteredVegeterian = vegeterianInputRef.current.value;
     const enteredServes = servesInputRef.current.value;
-    const enteredCourse = courseInputRef.current.value;
     const enteredNotes = notesInputRef.current.value;
 
     fetch(
@@ -85,9 +92,9 @@ const RecipeForm = () => {
           image: imageAsUrl,
           description: enteredDescription,
           ingredients: enteredIngredients,
-          vegeterian: enteredVegeterian,
+          vegeterian: isVegeterian,
           serves: enteredServes,
-          course: enteredCourse,
+          course: courseType,
           notes: enteredNotes,
         }),
       }
@@ -166,7 +173,7 @@ const RecipeForm = () => {
                 <div>
                   <input
                     required
-                    ref={vegeterianInputRef}
+                    onChange={vegeterianHandler}
                     name="vegetarian"
                     type="radio"
                     value="yes"
@@ -175,7 +182,7 @@ const RecipeForm = () => {
                 </div>
                 <div>
                   <input
-                    ref={vegeterianInputRef}
+                    onChange={vegeterianHandler}
                     name="vegetarian"
                     type="radio"
                     value="no"
@@ -192,21 +199,21 @@ const RecipeForm = () => {
                   type="radio"
                   value="starter"
                   name="course"
-                  ref={courseInputRef}
+                  onChange={courseHandler}
                 ></input>
                 <label htmlFor="starter">Starter</label>
                 <input
                   type="radio"
                   value="main"
                   name="course"
-                  ref={courseInputRef}
+                  onChange={courseHandler}
                 ></input>
                 <label htmlFor="main">Main</label>
                 <input
                   type="radio"
                   value="dessert"
                   name="course"
-                  ref={courseInputRef}
+                  onChange={courseHandler}
                 ></input>
                 <label htmlFor="dessert">Dessert</label>
 
@@ -214,7 +221,7 @@ const RecipeForm = () => {
                   type="radio"
                   value="nibble"
                   name="course"
-                  ref={courseInputRef}
+                  onChange={courseHandler}
                 ></input>
                 <label htmlFor="nibble">Nibble</label>
               </div>

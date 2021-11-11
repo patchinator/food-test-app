@@ -19,10 +19,15 @@ const RecipeItem = (props) => {
           <h4>{props.title}</h4>
           <p>{props.difficulty}</p>
         </div>
-        <div>
+        <div className={style.card_wrapper}>
           <div className={style.time}>
             <div>{props.time} mins</div>
           </div>
+          {props.vegeterian === "yes" && (
+            <div className={style.vegeterian}>
+              <div>V</div>
+            </div>
+          )}
           <img src={props.image} alt={props.title} />
         </div>
       </motion.li>

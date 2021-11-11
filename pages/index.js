@@ -33,6 +33,7 @@ export default function Home() {
               difficulty: data[key].difficulty,
               time: data[key].time,
               description: data[key].description,
+              vegeterian: data[key].vegeterian,
               id: key,
             });
           }

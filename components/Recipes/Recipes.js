@@ -72,6 +72,7 @@ const Recipes = (props) => {
                     difficulty={recipe.difficulty}
                     time={recipe.time}
                     onRefresh={props.onRefresh}
+                    vegeterian={recipe.vegeterian}
                   />
                 </a>
               </Link>
