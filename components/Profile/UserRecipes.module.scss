@@ -1,6 +1,7 @@
 @import "../../styles/theme.scss";
 
 .recipe_list_title {
+  margin-top: 1rem;
   font-size: 24px;
   text-align: center;
   font-weight: bold;
@@ -38,4 +39,13 @@
       height: 4.5rem;
     }
   }
+}
+
+.back {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  background: white;
+  padding: 2rem;
+  transform: rotateZ(45deg);
 }

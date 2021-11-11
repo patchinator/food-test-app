@@ -1,6 +1,8 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
+import style from "./ProfileForm.module.scss";
+import ButtonTwo from "../UI/ButtonTwo";
 
 const ProfileForm = () => {
   const authCtx = useContext(AuthContext);
@@ -42,10 +44,9 @@ const ProfileForm = () => {
   };
 
   return (
-    <div>
-      <h2>Change Password</h2>
+    <div className={style.updated_password}>
       <form onSubmit={submitHandler}>
-        <div>
+        <div className={style.form_components}>
           <label htmlFor="new-password">Change Password</label>
           <input
             type="password"
@@ -54,8 +55,8 @@ const ProfileForm = () => {
             ref={updatedPasswordRef}
           />
         </div>
-        <div>
-          <button>Submit</button>
+        <div className={style.button}>
+          <ButtonTwo>Submit</ButtonTwo>
         </div>
       </form>
     </div>

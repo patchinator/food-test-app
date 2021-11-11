@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import style from "./UserRecipes.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import ButtonTwo from "../UI/ButtonTwo";
 
 const UserRecipes = () => {
   const authCtx = useContext(AuthContext);
@@ -51,6 +51,11 @@ const UserRecipes = () => {
         </div>
       </div>
       {recipes.length === 0 && <p>No recipes created</p>}
+      <div className={style.back}>
+        <Link href="/">
+          <ButtonTwo>Back</ButtonTwo>
+        </Link>
+      </div>
     </section>
   );
 };
