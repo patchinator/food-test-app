@@ -33,7 +33,7 @@ const ProfileForm = () => {
     // TODO validation
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCRN-bdOXYBhvmn76g3QcjL9jYAWXFYHHs",
+      `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${process.env.NEXT_PUBLIC_FIREBASE_KEY}`,
       {
         method: "POST",
         body: JSON.stringify({
