@@ -14,11 +14,9 @@ export default function UpdatePassword(props) {
       <ProfileForm />
       <div className={style.back}></div>
       <div className={style.button}>
-        <Link href="/">
-          <a>
-            <ButtonTwo>Back</ButtonTwo>
-          </a>
-        </Link>
+        <ButtonTwo>
+          <Link href="/">Back</Link>
+        </ButtonTwo>
       </div>
     </ProfileBackground>
   );
