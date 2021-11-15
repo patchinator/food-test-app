@@ -4,14 +4,12 @@ import { motion } from "framer-motion";
 const UserRecipeCard = (props) => {
   return (
     <motion.div
-      className={style.recipe_card}
       whileHover={{
-        scale: 1.01,
+        scale: [1.01, 1.03, 1.01],
         transition: {
           duration: 0.3,
         },
       }}
-      className={style.recipe_container}
     >
       <div className={style.recipe_wrapper}>
         <div className={style.recipe}>
