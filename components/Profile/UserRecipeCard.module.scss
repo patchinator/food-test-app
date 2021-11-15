@@ -1,21 +1,10 @@
 @import "../../styles/theme.scss";
 
-.recipe_list_title {
-  margin-top: 1rem;
-  font-size: 24px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.recipe_container {
-  display: flex;
-  justify-content: center;
-}
-
 .recipe_wrapper {
   display: flex;
   flex-direction: column;
   width: 25%;
+  float: left;
 }
 
 .recipe {

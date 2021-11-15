@@ -23,22 +23,34 @@ export default function UpdatePassword(props) {
 
   return (
     <ProfileBackground>
-      <div>
-        {loadedRecipes.length !== 0 &&
-          loadedRecipes.map((recipe) => (
-            <UserRecipeCard
-              key={recipe.id}
-              title={recipe.title}
-              image={recipe.image}
-            />
-          ))}
-      </div>
       <ProfileForm />
-      <div className={style.back}></div>
-      <div className={style.button}>
-        <ButtonTwo>
-          <Link href="/">Back</Link>
-        </ButtonTwo>
+      <div className={style.user_flex_container}>
+        <div className={style.recipes_list}>
+          <h1>Your Recipes</h1>
+          {loadedRecipes.length !== 0 &&
+            loadedRecipes.map((recipe) => (
+              <Link
+                key={recipe.id}
+                href={"/recipe/[recipeId]"}
+                as={`/recipe/${recipe.id}`}
+                passHref
+              >
+                <a>
+                  <UserRecipeCard
+                    key={recipe.id}
+                    title={recipe.title}
+                    image={recipe.image}
+                  />
+                </a>
+              </Link>
+            ))}
+        </div>
+        <div className={style.back}></div>
+        <div className={style.button}>
+          <ButtonTwo>
+            <Link href="/">Back</Link>
+          </ButtonTwo>
+        </div>
       </div>
     </ProfileBackground>
   );

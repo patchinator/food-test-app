@@ -44,21 +44,24 @@ const ProfileForm = () => {
   };
 
   return (
-    <div className={style.updated_password}>
-      <form onSubmit={submitHandler}>
-        <div className={style.form_components}>
-          <label htmlFor="new-password">Change Password</label>
-          <input
-            type="password"
-            id="new-password"
-            minLength="6"
-            ref={updatedPasswordRef}
-          />
-        </div>
-        <div className={style.button}>
-          <ButtonTwo>Submit</ButtonTwo>
-        </div>
-      </form>
+    <div className={style.profile}>
+      <div className={style.updated_password}>
+        <h1 className={style.account_title}>Account Details</h1>
+        <form onSubmit={submitHandler}>
+          <div className={style.form_components}>
+            <label htmlFor="new-password">Change Password</label>
+            <input
+              type="password"
+              id="new-password"
+              minLength="6"
+              ref={updatedPasswordRef}
+            />
+          </div>
+          <div className={style.button}>
+            <ButtonTwo>Submit</ButtonTwo>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
