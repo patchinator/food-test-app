@@ -1,29 +1,12 @@
 import { useRef } from "react";
-import style from "./ProfileForm.module.scss";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
+import style from "./ProfileForm.module.scss";
+import ButtonTwo from "../UI/ButtonTwo";
 
 const ProfileForm = () => {
   const authCtx = useContext(AuthContext);
-
   const updatedPasswordRef = useRef();
-
-  // TODO --> remove recipes that you've created from a list in your profile page
-
-  // const deleteRecipeHandler = () => {
-  //   fetch(
-  //     `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes/${props.id}.json`,
-  //     {
-  //       method: "DELETE",
-  //     }
-  //   ).then((res) => {
-  //     if (res.ok) {
-  //       props.onRefresh();
-  //     } else {
-  //       alert("Delete failed");
-  //     }
-  //   });
-  // };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -33,7 +16,7 @@ const ProfileForm = () => {
     // TODO validation
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCRN-bdOXYBhvmn76g3QcjL9jYAWXFYHHs",
+      `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${process.env.NEXT_PUBLIC_FIREBASE_KEY}`,
       {
         method: "POST",
         body: JSON.stringify({
@@ -54,7 +37,6 @@ const ProfileForm = () => {
           if (data && data.error && data.error.message) {
             errorMessage = data.error.message;
           }
-          // TODO create error modal
           throw new Error(errorMessage);
         });
       }
@@ -62,22 +44,24 @@ const ProfileForm = () => {
   };
 
   return (
-    <div>
-      <h2>Change Password</h2>
-      <form onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="new-password">Change Password</label>
-          <input
-            type="password"
-            id="new-password"
-            minLength="6"
-            ref={updatedPasswordRef}
-          />
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>
-      </form>
+    <div className={style.profile}>
+      <div className={style.updated_password}>
+        <h1 className={style.account_title}>Account Details</h1>
+        <form onSubmit={submitHandler}>
+          <div className={style.form_components}>
+            <label htmlFor="new-password">Change Password</label>
+            <input
+              type="password"
+              id="new-password"
+              minLength="6"
+              ref={updatedPasswordRef}
+            />
+          </div>
+          <div className={style.button}>
+            <ButtonTwo>Submit</ButtonTwo>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

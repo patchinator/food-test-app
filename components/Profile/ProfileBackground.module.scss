@@ -1,0 +1,9 @@
+.background {
+  background-image: url("../Assets/profile-image.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+}

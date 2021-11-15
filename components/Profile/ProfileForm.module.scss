@@ -1,0 +1,37 @@
+.profile {
+  display: flex;
+  min-height: 15%;
+
+  .updated_password {
+    .account_title {
+      margin: 0;
+      margin-left: 5rem;
+    }
+
+    .form_components {
+      padding: 1rem;
+      text-align: center;
+
+      label {
+        display: block;
+        padding-bottom: 0.25rem;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      input {
+        height: 1.5rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: none;
+        font-size: 16px;
+        background: rgb(232, 240, 254);
+      }
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
