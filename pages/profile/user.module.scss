@@ -1,12 +1,26 @@
+@import "../../styles/theme.scss";
+
 .user_flex_container {
   display: flex;
+  flex-direction: column;
 
   .recipes_list {
     width: 100%;
 
     h1 {
-      margin: 0;
-      margin-left: 5rem;
+      text-align: center;
+      margin: 0 20% 0 20%;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $border_color;
+    }
+
+    .no_recipes {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bolder;
+      color: rgb(63, 63, 63);
+      margin-bottom: 5rem;
     }
   }
 

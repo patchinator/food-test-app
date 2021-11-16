@@ -5,9 +5,9 @@ const UserRecipeCard = (props) => {
   return (
     <motion.div
       whileHover={{
-        scale: [1.01, 1.03, 1.01],
+        scale: 1.01,
         transition: {
-          duration: 0.3,
+          duration: 0.2,
         },
       }}
     >

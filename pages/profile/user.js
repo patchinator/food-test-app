@@ -44,6 +44,13 @@ export default function UpdatePassword(props) {
                 </a>
               </Link>
             ))}
+          {loadedRecipes.length === 0 && (
+            <div className={style.no_recipes}>Empty.. create one!?</div>
+          )}
+        </div>
+        <div className={style.recipes_list}>
+          <h1>Liked recipes</h1>
+          <div className={style.no_recipes}>Coming soon...!</div>
         </div>
         <div className={style.back}></div>
         <div className={style.button}>
