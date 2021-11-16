@@ -5,6 +5,10 @@
   justify-content: center;
   margin-bottom: 8rem;
 
+  @media screen and (max-width: 1280px) {
+    margin-bottom: 3rem;
+  }
+
   .icons {
     list-style: none;
     width: 80%;
@@ -26,7 +30,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      @media screen and (max-width: 1280px) {
+        padding-bottom: unset;
+      }
 
       &:active,
       &:hover {

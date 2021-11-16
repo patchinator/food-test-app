@@ -10,8 +10,8 @@
   top: 25%;
   right: 20%;
 
-  @media only screen and (max-width: 1300px) {
-    top: 10%;
+  @media screen and (max-width: 1280px) {
+    top: 0;
   }
 
   .form_header {
