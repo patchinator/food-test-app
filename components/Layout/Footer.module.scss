@@ -21,11 +21,12 @@
       text-align: center;
       border-radius: 50%;
       height: 3rem;
+      font-size: 2rem;
+      transition: 150ms ease-in;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2rem;
-      transition: 150ms ease-in;
+      padding-top: 0.5rem;
 
       &:active,
       &:hover {
