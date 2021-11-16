@@ -1,5 +1,4 @@
 import style from "./RecipeDetails.module.scss";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClock,
@@ -9,8 +8,6 @@ import {
   faUtensils,
   faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
-import ButtonTwo from "../../UI/ButtonTwo";
-import Button from "../../UI/Button";
 
 const RecipeDetails = (props) => {
   return (
@@ -93,11 +90,6 @@ const RecipeDetails = (props) => {
       </div>
 
       <div className={style.details_right}>
-        <div className={style.recipe_back}>
-          <Link href="/" passHref>
-            <ButtonTwo>Back to recipes</ButtonTwo>
-          </Link>
-        </div>
         <div className={style.recipe_header}>
           <h2>Recipe</h2>
         </div>

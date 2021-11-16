@@ -1,10 +1,16 @@
 @import "../../styles/theme.scss";
+@import "../../styles/media.scss";
 
 .recipe_wrapper {
   display: flex;
   flex-direction: column;
   width: 25%;
   float: left;
+
+  @media screen and (max-width: $phones) {
+    float: unset;
+    width: 100%;
+  }
 }
 
 .recipe {
