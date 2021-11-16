@@ -26,7 +26,9 @@ const HomepageHead = () => {
         }}
       >
         <div className={style.wrapper}>
-          <div className={style.static_text}>I fancy</div>
+          <div className={style.static_text}>
+            <p>I fancy</p>
+          </div>
           <div className={style.text_box}>
             <ul className={style.dynamic_text}>
               <li>
