@@ -1,5 +1,4 @@
 import "../styles/globals.scss";
-import Layout from "../components/Layout/Layout";
 import { AuthContextProvider } from "../store/auth-context";
 import { motion } from "framer-motion";
 

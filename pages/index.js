@@ -19,9 +19,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetch(
-      "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json"
-    ).then((res) =>
+    fetch(`${process.env.NEXT_PUBLIC_FIREBASE_DB}/recipes.json`).then((res) =>
       res
         .json()
         .then((data) => {

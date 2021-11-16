@@ -33,7 +33,7 @@ const Details = (props) => {
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json"
+    `${process.env.NEXT_PUBLIC_FIREBASE_DB}/recipes.json`
   );
   const data = await res.json();
 
@@ -52,7 +52,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.recipeId;
   const res = await fetch(
-    `https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes/${id}.json`
+    `${process.env.NEXT_PUBLIC_FIREBASE_DB}/recipes/${id}.json`
   );
   const data = await res.json();
 

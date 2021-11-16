@@ -65,7 +65,7 @@ export default function UpdatePassword(props) {
 
 export const getStaticProps = async () => {
   const response = await fetch(
-    "https://auth-cce8a-default-rtdb.europe-west1.firebasedatabase.app/recipes.json"
+    `${process.env.NEXT_PUBLIC_FIREBASE_DB}/recipes.json`
   );
   const data = await response.json();
 
