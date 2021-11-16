@@ -1,4 +1,5 @@
 @import "../../../styles/theme.scss";
+@import "../../../styles/media.scss";
 
 .recipe_card {
   background: $theme_primary;
@@ -8,6 +9,13 @@
   list-style: none;
   padding: 0;
   width: 20rem;
+
+  @media screen and (max-width: $phones) {
+    margin: unset;
+    margin-bottom: 1rem;
+    width: 100vw;
+    height: 16rem;
+  }
 
   .recipe_card_header {
     display: flex;
@@ -30,6 +38,10 @@
       position: relative;
       z-index: 1;
       cursor: pointer;
+
+      @media screen and (max-width: 1280px) {
+        height: 14rem;
+      }
     }
 
     .time {
