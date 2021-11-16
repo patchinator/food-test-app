@@ -3,11 +3,15 @@
 .position {
   display: flex;
   justify-content: center;
+  margin-bottom: 8rem;
+
+  @media screen and (max-width: 1280px) {
+    margin-bottom: 3rem;
+  }
 
   .icons {
     list-style: none;
     width: 80%;
-    height: 10rem;
     border-top: 1px solid $border_color;
     margin: 0 2rem 0 2rem;
     display: flex;
@@ -15,18 +19,28 @@
     padding: 0;
 
     li {
-      width: 2.5rem;
+      width: 3rem;
       margin: 1rem 3rem 0 3rem;
       padding: 0;
+      text-align: center;
+      border-radius: 50%;
+      height: 3rem;
+      font-size: 2rem;
+      transition: 150ms ease-in;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0.5rem;
+
+      @media screen and (max-width: 1280px) {
+        padding-bottom: unset;
+      }
 
       &:active,
       &:hover {
-        color: $theme_secondary;
+        background: $theme_secondary;
+        transform: scale(1.1);
       }
-    }
-
-    a {
-      transition: 150ms ease-in;
     }
   }
 }

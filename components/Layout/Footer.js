@@ -13,7 +13,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon width="2rem" icon={faGithub} />
           </a>
         </li>
         <li>
@@ -22,12 +22,12 @@ const Footer = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <FontAwesomeIcon icon={faFacebook} />
+            <FontAwesomeIcon width="2rem" icon={faFacebook} />
           </a>
         </li>
         <li>
           <a href="mailto:patrickhoveman@gmail.com">
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon width="2rem" icon={faEnvelope} />
           </a>
         </li>
       </ul>

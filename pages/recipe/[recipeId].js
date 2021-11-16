@@ -1,6 +1,9 @@
 import RecipeDetails from "../../components/Recipes/recipe/RecipeDetails";
 import Footer from "../../components/Layout/Footer";
 import { Fragment } from "react";
+import Link from "next/link";
+import ButtonTwo from "../../components/UI/ButtonTwo";
+import style from "./recipeId.module.scss";
 
 const Details = (props) => {
   return (
@@ -18,6 +21,11 @@ const Details = (props) => {
         serves={props.recipe.serves}
         author={props.recipe.author}
       />
+      <div className={style.recipe_back}>
+        <Link href="/" passHref>
+          <ButtonTwo>Back to recipes</ButtonTwo>
+        </Link>
+      </div>
       <Footer />
     </Fragment>
   );

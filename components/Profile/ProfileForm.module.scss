@@ -1,11 +1,18 @@
+@import "../../styles/media.scss";
+
 .profile {
   display: flex;
+  justify-content: center;
   min-height: 15%;
+  margin-bottom: 2rem;
 
   .updated_password {
     .account_title {
-      margin: 0;
-      margin-left: 5rem;
+      text-align: center;
+
+      @media screen and (max-width: $phones) {
+        padding-top: 2rem;
+      }
     }
 
     .form_components {

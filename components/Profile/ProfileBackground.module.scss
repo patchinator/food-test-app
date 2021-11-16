@@ -1,3 +1,5 @@
+@import "../../styles/media.scss";
+
 .background {
   background-image: url("../Assets/profile-image.jpg");
   -webkit-background-size: cover;
@@ -6,4 +8,8 @@
   background-size: cover;
   position: relative;
   min-height: 100vh;
+
+  @media screen and (max-width: $phones) {
+    background-position: center;
+  }
 }
