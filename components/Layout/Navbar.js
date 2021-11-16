@@ -25,7 +25,7 @@ const Navbar = () => {
         </ButtonTwo>
         <ButtonTwo className={style.button}>
           <Link href={isLoggedIn ? "/profile/create-recipe" : "/auth/log-in"}>
-            Create Recipe
+            Create
           </Link>
         </ButtonTwo>
         {isLoggedIn && (
