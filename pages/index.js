@@ -8,15 +8,6 @@ import Layout from "../components/Layout/Layout";
 export default function Home() {
   const [library, setLibrary] = useState([]);
   const [refresh, setRefresh] = useState(0);
-  const [showModal, setShowModal] = useState(false);
-
-  const showRecipeModal = () => {
-    setShowModal(true);
-  };
-
-  const hideRecipeModal = () => {
-    setShowModal(false);
-  };
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_FIREBASE_DB}/recipes.json`).then((res) =>
